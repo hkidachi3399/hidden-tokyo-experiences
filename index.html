@@ -54,6 +54,15 @@
     transition:background .15s;
   }
   .top-cta:hover { background:var(--accent-dark); }
+  .top-nav { display:flex; align-items:center; gap:1.1rem; }
+  .top-nav > a:not(.top-cta) { color:var(--ink); text-decoration:none; font-weight:600; font-size:.9rem; }
+  .top-nav > a:not(.top-cta):hover { color:var(--accent); }
+  .card.tow { outline:2.5px solid var(--gold); }
+  .tow-badge {
+    position:absolute; top:.8rem; left:.8rem;
+    background:var(--gold); color:#fff; font-size:.72rem; font-weight:700;
+    letter-spacing:.06em; padding:.3rem .7rem; border-radius:6px; text-transform:uppercase;
+  }
 
   /* ---------- Hero ---------- */
   .hero {
@@ -225,7 +234,10 @@
 <div class="topbar">
   <div class="topbar-in">
     <a class="brand" href="#top">Hidden <span>Tokyo</span> Experiences</a>
-    <a class="top-cta" href="#tours">Book a Tour</a>
+    <nav class="top-nav">
+      <a href="blog/">Journal</a>
+      <a class="top-cta" href="#tours">Book a Tour</a>
+    </nav>
   </div>
 </div>
 
@@ -283,7 +295,7 @@
     </div>
     <div class="grid">
 
-      <div class="card">
+      <div class="card" data-tour="totoro">
         <div class="card-media m-totoro" role="img" aria-label="Forest path in the Sayama Hills"></div>
         <div class="card-body">
           <div class="stars">★★★★★ 5.0</div>
@@ -294,7 +306,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" data-tour="spa">
         <div class="card-media m-spa"></div>
         <div class="card-body">
           <div class="stars">★★★★★ 5.0</div>
@@ -305,7 +317,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" data-tour="zen">
         <div class="card-media m-zen" role="img" aria-label="Temple gate at Heirinji"></div>
         <div class="card-body">
           <div class="stars">★★★★★ 5.0</div>
@@ -316,7 +328,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" data-tour="manga">
         <div class="card-media m-manga"></div>
         <div class="card-body">
           <div class="stars">★★★★★ 5.0</div>
@@ -327,7 +339,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" data-tour="samurai">
         <div class="card-media m-samurai" role="img" aria-label="Stone monument of Shakujii Castle ruins"></div>
         <div class="card-body">
           <div class="stars">★★★★★ 5.0</div>
@@ -381,9 +393,24 @@
 
 <footer>
   <a class="brand" href="#top">Hidden <span>Tokyo</span> Experiences</a>
-  <p>Follow along: <a class="social" href="https://www.instagram.com/hide3399_in_tokyo/" target="_blank" rel="noopener">@hide3399_in_tokyo</a></p>
+  <p><a class="social" href="blog/">Read our Journal</a> · Follow along: <a class="social" href="https://www.instagram.com/hide3399_in_tokyo/" target="_blank" rel="noopener">@hide3399_in_tokyo</a></p>
   <p>© 2026 Hidden Tokyo Experiences · Tokyo, Japan</p>
 </footer>
 
+
+<script>
+(function(){
+  function isoWeek(d){var t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));var dn=(t.getUTCDay()+6)%7;t.setUTCDate(t.getUTCDate()-dn+3);var f=new Date(Date.UTC(t.getUTCFullYear(),0,4));return 1+Math.round((t-f)/604800000);}
+  var order=['totoro','spa','zen','manga','samurai'];
+  var pick=order[isoWeek(new Date())%order.length];
+  var card=document.querySelector('[data-tour="'+pick+'"]');
+  if(card){
+    card.style.order='-1';
+    card.classList.add('tow');
+    var m=card.querySelector('.card-media');
+    if(m){var b=document.createElement('span');b.className='tow-badge';b.textContent='\u2605 Tour of the Week';m.appendChild(b);}
+  }
+})();
+</script>
 </body>
 </html>
