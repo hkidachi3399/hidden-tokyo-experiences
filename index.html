@@ -160,11 +160,9 @@
   }
   .card-media .ph-label { display:none; }
   .m-totoro  { background-image:url('totoro.jpg'); }
-  .m-spa     { background:linear-gradient(140deg,#28455c,#3e6b80 60%,#7fa8b0); }
-  .m-spa::after { content:"♨"; font-size:3rem; color:rgba(255,255,255,.55); }
+  .m-spa     { background-image:url('spa.jpg'); }
   .m-zen     { background-image:url('zen.jpg'); background-position:75% center; }
-  .m-manga   { background:linear-gradient(140deg,#5c2e3e,#84405c 60%,#b0708a); }
-  .m-manga::after { content:"📖"; font-size:3rem; opacity:.75; }
+  .m-manga   { background-image:url('manga.jpg'); }
   .m-samurai { background-image:url('samurai.jpg'); }
   .card-body { padding:1.3rem 1.3rem 1.5rem; display:flex; flex-direction:column; flex:1; }
   .stars { color:var(--gold); font-size:.82rem; font-weight:600; margin-bottom:.45rem; }
@@ -320,7 +318,7 @@
       </div>
 
       <div class="card" data-tour="spa">
-        <div class="card-media m-spa"></div>
+        <div class="card-media m-spa" role="img" aria-label="Kurome River in autumn"></div>
         <div class="card-body">
           <div class="stars">★★★★★ 5.0</div>
           <h3>Ultimate Spa Japon Retreat &amp; Kurome River Stroll</h3>
@@ -342,7 +340,7 @@
       </div>
 
       <div class="card" data-tour="manga">
-        <div class="card-media m-manga"></div>
+        <div class="card-media m-manga" role="img" aria-label="Classic manga murals near the birthplace of manga"></div>
         <div class="card-body">
           <div class="stars">★★★★★ 5.0</div>
           <h3>Birthplace of Manga &amp; Anime Guided Museum Walk</h3>
