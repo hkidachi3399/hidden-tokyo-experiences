@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal — Hidden Tokyo Experiences</title>
+<meta name="description" content="Stories from the hidden side of Tokyo: Totoro's real forest, Zen temples, sake breweries, samurai ruins and the neighborhoods tourists never see.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#211d1a; --paper:#faf7f1; --card:#fff; --accent:#b5432f; --accent-dark:#93331f; --green:#3d5a3e; --gold:#b98a2e; --muted:#6f675e; --line:#e6dfd4; --radius:14px; --shadow:0 6px 24px rgba(33,29,26,.08); }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',-apple-system,sans-serif; background:var(--paper); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3 { font-family:'Fraunces',Georgia,serif; }
+  a { color:var(--accent); }
+  .topbar { position:sticky; top:0; z-index:50; background:rgba(250,247,241,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .topbar-in { max-width:1060px; margin:0 auto; padding:.7rem 1.1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+  .brand { font-family:'Fraunces',serif; font-weight:700; font-size:1.02rem; color:var(--ink); text-decoration:none; }
+  .brand span { color:var(--accent); }
+  .top-cta { background:var(--accent); color:#fff; text-decoration:none; padding:.5rem .95rem; border-radius:999px; font-weight:600; font-size:.85rem; }
+  .top-cta:hover { background:var(--accent-dark); }
+  .wrap { max-width:800px; margin:0 auto; padding:0 1.1rem; }
+  .page-head { text-align:center; padding:3.2rem 0 2.2rem; }
+  .page-head .kicker { color:var(--accent); font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; font-weight:700; }
+  .page-head h1 { font-size:clamp(1.8rem,5vw,2.5rem); margin:.4rem 0 .6rem; }
+  .page-head p { color:var(--muted); }
+  .post-card { display:grid; grid-template-columns:220px 1fr; gap:1.4rem; background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin-bottom:1.5rem; text-decoration:none; color:var(--ink); transition:transform .15s; }
+  .post-card:hover { transform:translateY(-3px); }
+  .post-card .thumb { background-size:cover; background-position:center; min-height:160px; }
+  .post-card .body { padding:1.2rem 1.3rem 1.2rem 0; }
+  .post-card .date { font-size:.78rem; color:var(--muted); letter-spacing:.05em; text-transform:uppercase; font-weight:600; }
+  .post-card h2 { font-size:1.25rem; margin:.3rem 0 .5rem; }
+  .post-card p { color:var(--muted); font-size:.9rem; }
+  footer { border-top:1px solid var(--line); margin-top:3rem; padding:2.2rem 1.1rem; text-align:center; color:var(--muted); font-size:.85rem; }
+  @media (max-width:640px){ .post-card { grid-template-columns:1fr; } .post-card .body { padding:1.1rem 1.3rem; } }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="brand" href="../">Hidden <span>Tokyo</span> Experiences</a>
+  <a class="top-cta" href="../#tours">Book a Tour</a>
+</div></div>
+
+<div class="wrap">
+  <div class="page-head">
+    <span class="kicker">Journal</span>
+    <h1>Stories from the hidden side of Tokyo</h1>
+    <p>Field notes from your guide, Hide — the forests, temples, bathhouses and noodle shops the guidebooks miss.</p>
+  </div>
+
+  <!-- POSTS:START (newest first) -->
+  <a class="post-card" href="totoro-forest-tokyo.html">
+    <div class="thumb" style="background-image:url('../totoro.jpg')"></div>
+    <div class="body">
+      <span class="date">July 20, 2026 · Sayama Hills</span>
+      <h2>Totoro's Forest Is Real — and It's 40 Minutes from Tokyo</h2>
+      <p>The ancient hills that inspired My Neighbor Totoro are hiding in plain sight on the edge of the city. Here's how to find them, and why you should bring an appetite for tea.</p>
+    </div>
+  </a>
+  <!-- POSTS:END -->
+</div>
+
+<footer>
+  <a href="../">← Back to Hidden Tokyo Experiences</a><br><br>
+  © 2026 Hidden Tokyo Experiences · Tokyo, Japan
+</footer>
+</body>
+</html>
