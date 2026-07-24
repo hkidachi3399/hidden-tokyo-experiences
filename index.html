@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hidden Tokyo Experiences — Small-Group Tours by a Local Guide</title>
-<meta name="description" content="★5.0-rated small-group walking tours one hour from Shinjuku. Zen temples, Totoro's forest, sake breweries, samurai ruins — the Tokyo nobody tells you about. Guided by a licensed English-speaking local.">
+<meta name="description" content="★5.0-rated small-group walking tours under 45 minutes from Ikebukuro. Zen temples, Totoro's forest, sake breweries, samurai ruins — the Tokyo nobody tells you about. Guided by a licensed English-speaking local.">
 <meta property="og:title" content="Hidden Tokyo Experiences">
 <meta property="og:description" content="The Tokyo nobody tells you about. ★5.0-rated small-group tours by a local guide.">
 <meta property="og:type" content="website">
@@ -248,6 +248,25 @@
   .card.rv:nth-child(even) { transform:translate(22px,16px); }
   .card.rv.in { transform:none; }
   .card.rv.in:hover { transform:translateY(-5px); }
+
+  /* ---------- Heart-burst tap delight ---------- */
+  .heart-burst {
+    position:absolute; font-size:70px; line-height:1; color:#fff; z-index:5;
+    text-shadow:0 2px 14px rgba(0,0,0,.4); pointer-events:none; opacity:0;
+    transform:translate(-50%,-50%) scale(.5);
+  }
+  .heart-burst.go { animation:heartPop .8s cubic-bezier(.17,.89,.32,1.28) forwards; }
+  @keyframes heartPop {
+    0% { opacity:0; transform:translate(-50%,-50%) scale(.4); }
+    15% { opacity:1; transform:translate(-50%,-50%) scale(1.15); }
+    32% { transform:translate(-50%,-50%) scale(.94); }
+    100% { opacity:0; transform:translate(-50%,-50%) scale(1.3); }
+  }
+
+  /* ---------- Mobile tour carousel + dots + swipe hint ---------- */
+  .grid-dots { display:none; }
+  .swipe-hint { display:none; }
+  .scroll-cue { display:none; }
   .card-media {
     height:195px; position:relative;
     display:flex; align-items:center; justify-content:center;
@@ -366,6 +385,37 @@
     .stat span { font-size:.66rem; }
     .btn, .card-cta, .top-cta { touch-action:manipulation; }
     .btn, .card-cta { padding-top:.95rem; padding-bottom:.95rem; }
+
+    /* swipeable, edge-bleeding tour carousel */
+    .grid {
+      display:flex; flex-wrap:nowrap; gap:1rem;
+      overflow-x:auto; scroll-snap-type:x mandatory;
+      margin:0 -1.1rem; padding:.3rem 1.1rem 1.5rem;
+      -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
+    }
+    .grid::-webkit-scrollbar { display:none; }
+    .grid .card { flex:0 0 82%; scroll-snap-align:center; }
+    .card-media { height:225px; }
+
+    .grid-dots { display:flex; justify-content:center; gap:.4rem; margin:-1rem 0 1.6rem; }
+    .grid-dots span { width:6px; height:6px; border-radius:50%; background:var(--line); transition:background .25s, transform .25s; }
+    .grid-dots span.active { background:var(--accent); transform:scale(1.4); }
+
+    .swipe-hint {
+      display:inline-flex; align-items:center; gap:.4rem; margin:0 auto 1rem; padding:.4rem .85rem;
+      background:var(--card); border:1px solid var(--line); border-radius:999px;
+      font-size:.72rem; color:var(--muted); font-weight:600;
+      animation:hintSlide 1.7s ease-in-out 3;
+    }
+    @keyframes hintSlide { 0%,100% { opacity:.55; transform:translateX(0); } 50% { opacity:1; transform:translateX(5px); } }
+
+    .scroll-cue {
+      display:block; margin-top:1.7rem; font-size:1.4rem; color:rgba(255,255,255,.65);
+      animation:cueBounce 1.6s ease-in-out infinite; transition:opacity .4s;
+    }
+    @keyframes cueBounce { 0%,100% { transform:translateY(0); opacity:.5; } 50% { transform:translateY(8px); opacity:1; } }
+
+    .card.rv:nth-child(odd), .card.rv:nth-child(even) { transform:translateY(16px); }
   }
   @media (max-width:560px) {
     .topbar-in { padding:.55rem .8rem; gap:.6rem; }
@@ -417,7 +467,7 @@
     <div class="orn" aria-hidden="true"><i></i></div>
     <span class="kicker">Small-group tours · West Tokyo</span>
     <h1>The Tokyo <em>nobody</em> tells you about.</h1>
-    <p class="lead">Zen temples, Totoro's real forest, sake breweries and samurai ruins — all within an hour of Shinjuku, and blissfully free of crowds. Guided by a local who actually lives here.</p>
+    <p class="lead">Zen temples, Totoro's real forest, sake breweries and samurai ruins — all within 45 minutes of Ikebukuro, and blissfully free of crowds. Guided by a local who actually lives here.</p>
     <div class="proof">
       <span class="pill"><b>★ 5.0</b> rated on GetYourGuide</span>
       <span class="pill">Max 6 guests</span>
@@ -427,6 +477,7 @@
       <a class="btn btn-primary" href="https://www.getyourguide.com/hanno-l153846/tokyo-hanno-forest-fermentation-park-sake-tour-t1352325/?partner_id=YFZH76Z&utm_medium=online_publisher&cmp=hte-lp-hero" target="_blank" rel="noopener sponsored">Featured: Sake &amp; Forest Tour — 30% off</a>
       <a class="btn btn-ghost" href="#tours">See all tours</a>
     </div>
+    <div class="scroll-cue" aria-hidden="true">⌄</div>
   </div>
 </header>
 
@@ -440,7 +491,7 @@
 <section class="stats" aria-label="Quick facts">
   <div class="stat"><b data-count="6">0</b><span>Signature Tours</span></div>
   <div class="stat"><b data-count="6">0</b><span>Guests Max</span></div>
-  <div class="stat"><b data-count="1" data-suffix=" hr">0</b><span>From Shinjuku</span></div>
+  <div class="stat"><b data-count="45" data-prefix="&lt; " data-suffix=" min">0</b><span>From Ikebukuro</span></div>
   <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Local-Guided</span></div>
 </section>
 
@@ -458,7 +509,7 @@
         <div class="tour-tags">
           <span class="tag">5 hours</span><span class="tag">Max 6 guests</span><span class="tag">Sake tasting</span><span class="tag">Optional Mt. Tenranzan hike</span>
         </div>
-        <h3>One hour from Shinjuku. Zero tourists.</h3>
+        <h3>One hour from Ikebukuro. Zero tourists.</h3>
         <p>Walk through a 500-year-old Zen temple garden, explore Japan's most unique fermentation theme park, and taste sake brewed with mountain spring water at Igarashi Brewery. This is not Asakusa. This is not a bus tour. This is the real Japan.</p>
         <div class="price-row">
           <span class="price-now">¥10,500</span>
@@ -479,6 +530,7 @@
       <h2>Five more ways to escape the crowds</h2>
       <p>Every tour is ★5.0-rated, small-group, and books instantly on GetYourGuide.</p>
     </div>
+    <div style="text-align:center;"><span class="swipe-hint">👉 Swipe for more tours</span></div>
     <div class="grid">
 
       <div class="card" data-tour="totoro">
@@ -537,6 +589,7 @@
       </div>
 
     </div>
+    <div class="grid-dots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -685,24 +738,83 @@
   if(!statEls.length) return;
   function animate(el){
     var target=parseFloat(el.getAttribute('data-count'))||0;
+    var prefix=el.getAttribute('data-prefix')||'';
     var suffix=el.getAttribute('data-suffix')||'';
     var dur=1000, start=null;
     function step(ts){
       if(!start) start=ts;
       var p=Math.min((ts-start)/dur,1);
-      el.textContent=Math.floor(p*target)+suffix;
-      if(p<1) requestAnimationFrame(step); else el.textContent=target+suffix;
+      el.textContent=prefix+Math.floor(p*target)+suffix;
+      if(p<1) requestAnimationFrame(step); else el.textContent=prefix+target+suffix;
     }
     requestAnimationFrame(step);
   }
   var statsSec=document.querySelector('.stats');
-  if(!statsSec || !('IntersectionObserver' in window)){ statEls.forEach(function(el){el.textContent=el.getAttribute('data-count')+(el.getAttribute('data-suffix')||'');}); return; }
+  if(!statsSec || !('IntersectionObserver' in window)){ statEls.forEach(function(el){el.textContent=(el.getAttribute('data-prefix')||'')+el.getAttribute('data-count')+(el.getAttribute('data-suffix')||'');}); return; }
   var done=false;
   new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting && !done){ done=true; statEls.forEach(animate); }
     });
   },{threshold:.4}).observe(statsSec);
+})();
+
+/* double-tap heart-burst delight on tour photos */
+(function(){
+  function attachHeart(el){
+    var lastTap=0;
+    el.addEventListener('click', function(e){
+      var now=Date.now();
+      if(now-lastTap<350){
+        var rect=el.getBoundingClientRect();
+        var x=(typeof e.clientX==='number' && e.clientX>0)? e.clientX-rect.left : rect.width/2;
+        var y=(typeof e.clientY==='number' && e.clientY>0)? e.clientY-rect.top : rect.height/2;
+        var h=document.createElement('div');
+        h.className='heart-burst';
+        h.textContent='♥';
+        h.style.left=x+'px'; h.style.top=y+'px';
+        el.appendChild(h);
+        requestAnimationFrame(function(){ h.classList.add('go'); });
+        h.addEventListener('animationend', function(){ h.remove(); });
+        lastTap=0;
+      } else {
+        lastTap=now;
+      }
+    });
+  }
+  document.querySelectorAll('.card-media, .featured-media').forEach(attachHeart);
+})();
+
+/* mobile carousel dots, synced to horizontal scroll position */
+(function(){
+  var grid=document.querySelector('#tours .grid');
+  var dotsWrap=document.querySelector('.grid-dots');
+  if(!grid || !dotsWrap) return;
+  var cards=Array.prototype.slice.call(grid.querySelectorAll('.card'));
+  if(!cards.length) return;
+  cards.forEach(function(_, i){
+    var d=document.createElement('span');
+    if(i===0) d.classList.add('active');
+    dotsWrap.appendChild(d);
+  });
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && e.intersectionRatio>0.55){
+        var idx=cards.indexOf(e.target);
+        if(idx>-1){
+          Array.prototype.forEach.call(dotsWrap.children, function(d,i){ d.classList.toggle('active', i===idx); });
+        }
+      }
+    });
+  }, {root:grid, threshold:[0.55]});
+  cards.forEach(function(c){ io.observe(c); });
+
+  /* hide the swipe hint after first manual interaction */
+  var hint=document.querySelector('.swipe-hint');
+  if(hint){
+    grid.addEventListener('scroll', function(){ hint.style.animation='none'; hint.style.opacity='0'; }, {passive:true, once:true});
+  }
 })();
 </script>
 </body>
