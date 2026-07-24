@@ -221,6 +221,8 @@
   .price-was { color:var(--muted); text-decoration:line-through; font-size:1rem; }
   .price-off { background:#f3e3df; color:var(--accent-dark); font-size:.75rem; font-weight:700; padding:.2rem .55rem; border-radius:6px; }
   .per { font-size:.8rem; color:var(--muted); }
+  .price-usd { font-size:.62em; font-weight:600; color:var(--muted); margin-left:.15em; }
+  .price-was .price-usd { text-decoration:line-through; }
 
   .tour-tags { display:flex; flex-wrap:wrap; gap:.4rem; }
   .tag {
@@ -512,8 +514,8 @@
         <h3>One hour from Ikebukuro. Zero tourists.</h3>
         <p>Walk through a 500-year-old Zen temple garden, explore Japan's most unique fermentation theme park, and taste sake brewed with mountain spring water at Igarashi Brewery. This is not Asakusa. This is not a bus tour. This is the real Japan.</p>
         <div class="price-row">
-          <span class="price-now">¥10,500</span>
-          <span class="price-was">¥15,000</span>
+          <span class="price-now">¥10,500<span class="price-usd">(~$65)</span></span>
+          <span class="price-was">¥15,000<span class="price-usd">(~$93)</span></span>
           <span class="price-off">LAUNCH −30%</span>
           <span class="per">per person</span>
         </div>
