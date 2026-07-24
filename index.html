@@ -8,9 +8,11 @@
 <meta property="og:title" content="Hidden Tokyo Experiences">
 <meta property="og:description" content="The Tokyo nobody tells you about. ★5.0-rated small-group tours by a local guide.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#22301f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
 <style>
   :root {
     --ink: #211d1a;
@@ -27,12 +29,17 @@
     --shadow: 0 2px 6px rgba(33,29,26,.05), 0 10px 30px rgba(33,29,26,.07);
     --shadow-lg: 0 4px 10px rgba(33,29,26,.06), 0 22px 48px rgba(33,29,26,.13);
   }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html { scroll-behavior:smooth; overflow-x:hidden; }
   body {
     font-family:'Inter',-apple-system,'Hiragino Sans',sans-serif;
     background:var(--paper); color:var(--ink);
     line-height:1.65; -webkit-font-smoothing:antialiased;
+    overflow-x:hidden; width:100%;
+  }
+  .scroll-progress {
+    position:fixed; top:0; left:0; height:3px; width:0%; z-index:2001;
+    background:linear-gradient(90deg,var(--gold),var(--accent)); pointer-events:none;
   }
   /* paper grain */
   body::after {
@@ -66,6 +73,7 @@
   }
   .brand { font-family:'Fraunces',serif; font-weight:700; font-size:1.02rem; letter-spacing:.02em; color:var(--ink); text-decoration:none; white-space:nowrap; display:flex; align-items:center; gap:.55rem; }
   .brand span { color:var(--accent); }
+  .brand-short { display:none; color:var(--accent); }
   .brand-mark { width:32px; height:32px; border-radius:50%; box-shadow:0 0 0 1px var(--gold-soft); }
   .top-cta {
     background:var(--accent); color:#fff; text-decoration:none;
@@ -76,6 +84,32 @@
   .top-nav { display:flex; align-items:center; gap:1.1rem; }
   .top-nav > a:not(.top-cta) { color:var(--ink); text-decoration:none; font-weight:600; font-size:.9rem; }
   .top-nav > a:not(.top-cta):hover { color:var(--accent); }
+  /* ---------- Ticker ---------- */
+  .ticker { overflow:hidden; background:#1c2618; padding:.6rem 0; }
+  .ticker-track { display:inline-flex; width:max-content; gap:2.2rem; animation:tickerScroll 34s linear infinite; }
+  .ticker span { color:#e8e2d2; font-size:.76rem; letter-spacing:.13em; text-transform:uppercase; font-weight:600; display:inline-flex; align-items:center; gap:.55rem; white-space:nowrap; }
+  .ticker span::before { content:"◆"; color:var(--gold); font-size:.55rem; }
+  @keyframes tickerScroll { from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .ticker-track { animation:none; } }
+
+  /* ---------- Stats strip ---------- */
+  .stats { display:flex; flex-wrap:wrap; justify-content:center; gap:1.6rem 2.6rem; padding:2.1rem 1rem; background:var(--card); border-bottom:1px solid var(--line); }
+  .stat { text-align:center; min-width:92px; }
+  .stat b { display:block; font-family:'Fraunces',serif; font-size:1.85rem; font-weight:700; color:var(--accent); line-height:1; }
+  .stat span { display:block; margin-top:.3rem; font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; font-weight:600; }
+
+  /* ---------- Mobile sticky book bar ---------- */
+  .mobile-cta {
+    position:fixed; left:0; right:0; bottom:0; z-index:60; display:none;
+    padding:.65rem .9rem calc(.65rem + env(safe-area-inset-bottom));
+    background:rgba(250,247,241,.94); backdrop-filter:blur(10px);
+    border-top:1px solid var(--line); box-shadow:0 -8px 22px rgba(33,29,26,.1);
+    transform:translateY(115%); transition:transform .35s cubic-bezier(.22,.61,.36,1);
+  }
+  .mobile-cta.show { transform:translateY(0); }
+  .mobile-cta.hide-for-footer { transform:translateY(115%) !important; }
+  .mobile-cta a { display:block; text-align:center; touch-action:manipulation; }
+
   .card.tow { outline:2.5px solid var(--gold); }
   .tow-badge {
     position:absolute; top:.8rem; left:.8rem;
@@ -197,12 +231,23 @@
   /* ---------- Tour grid ---------- */
   .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:1.5rem; }
   .card {
+    position:relative;
     background:var(--card); border-radius:var(--radius);
     border:1px solid #f0e9dc; box-shadow:var(--shadow);
     overflow:hidden; display:flex; flex-direction:column;
     transition:transform .3s cubic-bezier(.22,.61,.36,1), box-shadow .3s;
   }
   .card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+  .card::before {
+    content:""; position:absolute; inset:0; z-index:2; pointer-events:none;
+    background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.4) 50%, transparent 58%);
+    transform:translateX(-130%); transition:transform .75s ease;
+  }
+  .card:hover::before { transform:translateX(130%); }
+  .card.rv:nth-child(odd) { transform:translate(-22px,16px); }
+  .card.rv:nth-child(even) { transform:translate(22px,16px); }
+  .card.rv.in { transform:none; }
+  .card.rv.in:hover { transform:translateY(-5px); }
   .card-media {
     height:195px; position:relative;
     display:flex; align-items:center; justify-content:center;
@@ -312,7 +357,15 @@
     .featured { grid-template-columns:1fr; }
     .featured-media { min-height:220px; }
     .guide-in { grid-template-columns:1fr; text-align:center; justify-items:center; }
+    .guide-photo { width:170px; height:170px; }
     section { padding:2.9rem 0; }
+    .mobile-cta { display:block; }
+    .stats { gap:1.1rem 1.6rem; padding:1.7rem .8rem; }
+    .stat { min-width:70px; }
+    .stat b { font-size:1.5rem; }
+    .stat span { font-size:.66rem; }
+    .btn, .card-cta, .top-cta { touch-action:manipulation; }
+    .btn, .card-cta { padding-top:.95rem; padding-bottom:.95rem; }
   }
   @media (max-width:560px) {
     .topbar-in { padding:.55rem .8rem; gap:.6rem; }
@@ -321,6 +374,12 @@
     .top-nav { gap:.7rem; }
     .top-nav > a:not(.top-cta) { font-size:.82rem; }
     .top-cta { padding:.42rem .75rem; font-size:.78rem; white-space:nowrap; }
+    .hero { padding:4.2rem 1rem 3.6rem; }
+    .why-grid, .grid { gap:1.05rem; }
+  }
+  @media (max-width:400px) {
+    .brand-full { display:none; }
+    .brand-short { display:inline; }
   }
 </style>
 <link rel="canonical" href="https://hkidachi3399.github.io/hidden-tokyo-experiences/">
@@ -340,9 +399,11 @@
 </head>
 <body>
 
+<div class="scroll-progress" aria-hidden="true"></div>
+
 <div class="topbar">
   <div class="topbar-in">
-    <a class="brand" href="#top"><img class="brand-mark" src="favicon.png" alt="">Hidden <span>Tokyo</span> Experiences</a>
+    <a class="brand" href="#top"><img class="brand-mark" src="favicon.png" alt=""><span class="brand-full">Hidden <span>Tokyo</span> Experiences</span><span class="brand-short">HTE</span></a>
     <nav class="top-nav">
       <a href="blog/">Journal</a>
       <a class="top-cta" href="#tours">Book a Tour</a>
@@ -368,6 +429,20 @@
     </div>
   </div>
 </header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Totoro's Forest</span><span>Zen Temple Walk</span><span>Sake &amp; Fermentation</span><span>Samurai Ruins</span><span>Manga Birthplace</span><span>Riverside Bathhouse</span>
+    <span>Totoro's Forest</span><span>Zen Temple Walk</span><span>Sake &amp; Fermentation</span><span>Samurai Ruins</span><span>Manga Birthplace</span><span>Riverside Bathhouse</span>
+  </div>
+</div>
+
+<section class="stats" aria-label="Quick facts">
+  <div class="stat"><b data-count="6">0</b><span>Signature Tours</span></div>
+  <div class="stat"><b data-count="6">0</b><span>Guests Max</span></div>
+  <div class="stat"><b data-count="1" data-suffix=" hr">0</b><span>From Shinjuku</span></div>
+  <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Local-Guided</span></div>
+</section>
 
 <section id="featured">
   <div class="wrap">
@@ -529,6 +604,9 @@
   <p>© 2026 Hidden Tokyo Experiences · Tokyo, Japan</p>
 </footer>
 
+<div class="mobile-cta" aria-hidden="true">
+  <a class="btn btn-primary" href="#tours" style="width:100%;">See All 6 Tours &amp; Book →</a>
+</div>
 
 <script>
 (function(){
@@ -544,10 +622,47 @@
   }
 })();
 
-/* scroll-reveal + topbar shadow */
+/* scroll-reveal + topbar shadow + progress bar + hero parallax + mobile CTA */
 (function(){
   var bar=document.querySelector('.topbar');
-  window.addEventListener('scroll',function(){bar.classList.toggle('scrolled',window.scrollY>10);},{passive:true});
+  var progress=document.querySelector('.scroll-progress');
+  var heroIn=document.querySelector('.hero-in');
+  var heroEl=document.querySelector('.hero');
+  var mCta=document.querySelector('.mobile-cta');
+  var reduceMotion=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ticking=false;
+
+  function onScroll(){
+    var sy=window.scrollY||document.documentElement.scrollTop;
+    bar.classList.toggle('scrolled',sy>10);
+    var doc=document.documentElement;
+    var max=(doc.scrollHeight-doc.clientHeight)||1;
+    if(progress) progress.style.width=Math.min(100,(sy/max)*100)+'%';
+    if(heroIn && heroEl && !reduceMotion){
+      var heroH=heroEl.offsetHeight;
+      if(sy<heroH){
+        heroIn.style.transform='translateY('+Math.round(sy*-0.18)+'px)';
+        heroIn.style.opacity=Math.max(1-sy/(heroH*0.9),0);
+      }
+    }
+    if(mCta){
+      var heroBottom=heroEl?heroEl.offsetTop+heroEl.offsetHeight:0;
+      mCta.classList.toggle('show', sy>heroBottom && window.matchMedia('(max-width:720px)').matches);
+    }
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){ window.requestAnimationFrame(onScroll); ticking=true; }
+  },{passive:true});
+  onScroll();
+
+  var footerEl=document.querySelector('footer');
+  if(footerEl && mCta && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ mCta.classList.toggle('hide-for-footer', e.isIntersecting); });
+    },{rootMargin:'0px'}).observe(footerEl);
+  }
+
   var els=document.querySelectorAll('.sec-head, .featured, .card, .guide-in, .why, .final');
   els.forEach(function(el){el.classList.add('rv');});
   if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});return;}
@@ -562,6 +677,32 @@
     });
   },{rootMargin:'0px 0px -8% 0px',threshold:.08});
   els.forEach(function(el){io.observe(el);});
+})();
+
+/* animated stat counters */
+(function(){
+  var statEls=document.querySelectorAll('.stat b');
+  if(!statEls.length) return;
+  function animate(el){
+    var target=parseFloat(el.getAttribute('data-count'))||0;
+    var suffix=el.getAttribute('data-suffix')||'';
+    var dur=1000, start=null;
+    function step(ts){
+      if(!start) start=ts;
+      var p=Math.min((ts-start)/dur,1);
+      el.textContent=Math.floor(p*target)+suffix;
+      if(p<1) requestAnimationFrame(step); else el.textContent=target+suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  var statsSec=document.querySelector('.stats');
+  if(!statsSec || !('IntersectionObserver' in window)){ statEls.forEach(function(el){el.textContent=el.getAttribute('data-count')+(el.getAttribute('data-suffix')||'');}); return; }
+  var done=false;
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !done){ done=true; statEls.forEach(animate); }
+    });
+  },{threshold:.4}).observe(statsSec);
 })();
 </script>
 </body>
