@@ -84,6 +84,9 @@
   .top-nav { display:flex; align-items:center; gap:1.1rem; }
   .top-nav > a:not(.top-cta) { color:var(--ink); text-decoration:none; font-weight:600; font-size:.9rem; }
   .top-nav > a:not(.top-cta):hover { color:var(--accent); }
+  .ig-link { display:inline-flex; align-items:center; justify-content:center; color:var(--ink); }
+  .ig-link:hover { color:var(--accent); }
+  .ig-link svg { width:19px; height:19px; display:block; }
   /* ---------- Ticker ---------- */
   .ticker { overflow:hidden; background:#1c2618; padding:.6rem 0; }
   .ticker-track { display:inline-flex; width:max-content; gap:2.2rem; animation:tickerScroll 34s linear infinite; }
@@ -458,6 +461,8 @@
     <a class="brand" href="#top"><img class="brand-mark" src="favicon.png" alt=""><span class="brand-full">Hidden <span>Tokyo</span> Experiences</span><span class="brand-short">HTE</span></a>
     <nav class="top-nav">
       <a href="blog/">Journal</a>
+      <a class="ig-link" href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener" aria-label="Subscribe on Substack" title="Subscribe on Substack"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+      <a class="ig-link" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener" aria-label="Follow on Instagram" title="Follow on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg></a>
       <a class="top-cta" href="#tours">Book a Tour</a>
     </nav>
   </div>
@@ -605,6 +610,7 @@
         <h2>Meet your guide, Hide</h2>
         <p>I was born and raised in Tokyo, and I've spent my life exploring the corners of this city that never make it into guidebooks. By day I work in international business; on weekends I share the places I actually love — quiet temples, forest trails, neighborhood bathhouses, and the best noodle shops nobody photographs.</p>
         <p>Every tour is small (three guests max), unhurried, and personal. You won't follow a flag. You'll walk with a local friend.</p>
+        <p style="font-size:.9rem;">📷 <a href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener" style="color:var(--accent); font-weight:600; text-decoration:none;">Follow along on Instagram →</a> &nbsp;·&nbsp; ✍️ <a href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener" style="color:var(--accent); font-weight:600; text-decoration:none;">Read my Substack →</a></p>
         <p class="sig">— Hide, founder of Hidden Tokyo Experiences</p>
       </div>
     </div>
@@ -654,7 +660,7 @@
 <footer>
   <img class="f-mark" src="favicon.png" alt="Hidden Tokyo Experiences emblem" loading="lazy">
   <a class="brand" href="#top">Hidden <span>Tokyo</span> Experiences</a>
-  <p><a class="social" href="blog/">Read our Journal</a> · Follow along: <a class="social" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener">@hiddentokyo_experiences</a> · <a class="social" href="mailto:hkidachi@gmail.com">✉ Contact us</a></p>
+  <p><a class="social" href="blog/">Read our Journal</a> · <a class="social" href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener">Subscribe on Substack</a> · Follow along: <a class="social" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener">@hiddentokyo_experiences</a> · <a class="social" href="mailto:hkidachi@gmail.com">✉ Contact us</a></p>
   <p style="font-size:.72rem; color:#9c9488; margin-top:.3rem;">Some links on this page are affiliate links — booking through them supports this site at no extra cost to you.</p>
   <p>© 2026 Hidden Tokyo Experiences · Tokyo, Japan</p>
 </footer>
