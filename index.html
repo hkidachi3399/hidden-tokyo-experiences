@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JVQNQXHXW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5JVQNQXHXW');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hidden Tokyo Experiences — Small-Group Tours by a Local Guide</title>
@@ -87,28 +95,7 @@
   .ig-link { display:inline-flex; align-items:center; justify-content:center; color:var(--ink); opacity:.75; transition:opacity .15s,transform .15s; }
   .ig-link:hover { opacity:1; transform:translateY(-1px); }
   .ig-link svg { width:19px; height:19px; display:block; }
-  .top-nav > a.ig-link.substack { color:#FF6719; }
   .top-nav > a.ig-link.instagram { color:#C1367B; }
-  /* ---------- Newsletter strip ---------- */
-  .news-strip {
-    background:linear-gradient(135deg,#FF6719 0%,#e8551a 100%);
-    padding:2.6rem 1rem; text-align:center; color:#fff;
-  }
-  .news-strip .wrap { max-width:640px; }
-  .news-strip .news-kicker {
-    display:inline-flex; align-items:center; gap:.4rem; font-size:.78rem; font-weight:700;
-    letter-spacing:.08em; text-transform:uppercase; background:rgba(255,255,255,.18);
-    padding:.35rem .85rem; border-radius:999px; margin-bottom:1rem;
-  }
-  .news-strip h2 { font-size:1.65rem; color:#fff; margin-bottom:.5rem; }
-  .news-strip p { color:rgba(255,255,255,.9); font-size:.95rem; margin-bottom:1.4rem; }
-  .news-strip .btn-news {
-    display:inline-flex; align-items:center; gap:.5rem; background:#fff; color:#e8551a;
-    font-weight:700; padding:.85rem 1.7rem; border-radius:999px; text-decoration:none;
-    font-size:.95rem; transition:transform .15s,box-shadow .15s; box-shadow:0 6px 18px rgba(0,0,0,.15);
-  }
-  .news-strip .btn-news:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.2); }
-  .news-strip .btn-news svg { width:17px; height:17px; }
   /* ---------- Ticker ---------- */
   .ticker { overflow:hidden; background:#1c2618; padding:.6rem 0; }
   .ticker-track { display:inline-flex; width:max-content; gap:2.2rem; animation:tickerScroll 34s linear infinite; }
@@ -424,7 +411,8 @@
     .featured-media { min-height:220px; }
     .guide-in { grid-template-columns:1fr; text-align:center; justify-items:center; }
     .guide-photo { width:170px; height:170px; }
-    section { padding:2.9rem 0; }
+    section { padding:2.2rem 0; }
+    .sec-head { margin-bottom:1.8rem; }
     .mobile-cta { display:block; }
     .stats { gap:1.1rem 1.6rem; padding:1.7rem .8rem; }
     .stat { min-width:70px; }
@@ -443,6 +431,17 @@
     .grid::-webkit-scrollbar { display:none; }
     .grid .card { flex:0 0 82%; scroll-snap-align:center; }
     .card-media { height:225px; }
+
+    /* swipeable, edge-bleeding reviews + why-us carousels (mobile length reduction) */
+    .reviews-grid, .why-grid {
+      display:flex; flex-wrap:nowrap; gap:1rem;
+      overflow-x:auto; scroll-snap-type:x mandatory;
+      margin:0 -1.1rem; padding:.3rem 1.1rem 1.2rem;
+      -webkit-overflow-scrolling:touch; scrollbar-width:none; -ms-overflow-style:none;
+    }
+    .reviews-grid::-webkit-scrollbar, .why-grid::-webkit-scrollbar { display:none; }
+    .reviews-grid .review-card { flex:0 0 86%; scroll-snap-align:center; }
+    .why-grid .why { flex:0 0 78%; scroll-snap-align:center; }
 
     .grid-dots { display:flex; justify-content:center; gap:.4rem; margin:-1rem 0 1.6rem; }
     .grid-dots span { width:6px; height:6px; border-radius:50%; background:var(--line); transition:background .25s, transform .25s; }
@@ -503,7 +502,6 @@
     <a class="brand" href="#top"><img class="brand-mark" src="favicon.png" alt=""><span class="brand-full">Hidden <span>Tokyo</span> Experiences</span><span class="brand-short">HTE</span></a>
     <nav class="top-nav">
       <a href="blog/">Journal</a>
-      <a class="ig-link substack" href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener" aria-label="Subscribe on Substack" title="Subscribe on Substack"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
       <a class="ig-link instagram" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener" aria-label="Follow on Instagram" title="Follow on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg></a>
       <a class="top-cta" href="#tours">Book a Tour</a>
     </nav>
@@ -638,7 +636,7 @@
       </div>
 
     </div>
-    <div class="grid-dots" aria-hidden="true"></div>
+    <div class="grid-dots" id="tours-dots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -684,6 +682,7 @@
         <span class="review-badge">✓ Verified on GetYourGuide</span>
       </div>
     </div>
+    <div class="grid-dots" id="reviews-dots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -699,7 +698,6 @@
         <p>Every tour is small (three guests max), unhurried, and personal. You won't follow a flag. You'll walk with a local friend.</p>
         <div style="display:flex; flex-direction:column; align-items:flex-start; gap:.55rem; font-size:.9rem; margin-bottom:.8rem;">
           <a href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener" style="color:var(--accent); font-weight:600; text-decoration:none; display:inline-block;">📷 Follow along on Instagram →</a>
-          <a href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener" style="color:var(--accent); font-weight:600; text-decoration:none; display:inline-block;">✍️ Read my Substack →</a>
         </div>
         <p class="sig">— Hide, founder of Hidden Tokyo Experiences</p>
       </div>
@@ -719,18 +717,7 @@
       <div class="why"><div class="ico">🗾</div><h3>A real local</h3><p>Tokyo born and raised — these are the places I go on my own days off.</p></div>
       <div class="why"><div class="ico">🛡️</div><h3>Book with confidence</h3><p>Instant confirmation and free cancellation via GetYourGuide.</p></div>
     </div>
-  </div>
-</section>
-
-<section class="news-strip">
-  <div class="wrap">
-    <span class="news-kicker">✍️ The Journal, by email</span>
-    <h2>New hidden spots, before anyone else.</h2>
-    <p>One short email when there's a new tour, a new corner of Tokyo, or a story worth telling. No spam, unsubscribe anytime.</p>
-    <a class="btn-news" href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-      Subscribe on Substack →
-    </a>
+    <div class="grid-dots" id="why-dots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -762,7 +749,7 @@
 <footer>
   <img class="f-mark" src="favicon.png" alt="Hidden Tokyo Experiences emblem" loading="lazy">
   <a class="brand" href="#top">Hidden <span>Tokyo</span> Experiences</a>
-  <p><a class="social" href="blog/">Read our Journal</a> · <a class="social" href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener">Subscribe on Substack</a> · Follow along: <a class="social" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener">@hiddentokyo_experiences</a> · <a class="social" href="mailto:hkidachi@gmail.com">✉ Contact us</a></p>
+  <p><a class="social" href="blog/">Read our Journal</a> · Follow along: <a class="social" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener">@hiddentokyo_experiences</a> · <a class="social" href="mailto:hkidachi@gmail.com">✉ Contact us</a></p>
   <p style="font-size:.72rem; color:#9c9488; margin-top:.3rem;">Some links on this page are affiliate links — booking through them supports this site at no extra cost to you.</p>
   <p>© 2026 Hidden Tokyo Experiences · Tokyo, Japan</p>
 </footer>
@@ -895,36 +882,63 @@
   document.querySelectorAll('.card-media, .featured-media').forEach(attachHeart);
 })();
 
-/* mobile carousel dots, synced to horizontal scroll position */
+/* mobile carousel dots, synced to horizontal scroll position — reusable across tours/reviews/why-us */
 (function(){
-  var grid=document.querySelector('#tours .grid');
-  var dotsWrap=document.querySelector('.grid-dots');
-  if(!grid || !dotsWrap) return;
-  var cards=Array.prototype.slice.call(grid.querySelectorAll('.card'));
-  if(!cards.length) return;
-  cards.forEach(function(_, i){
-    var d=document.createElement('span');
-    if(i===0) d.classList.add('active');
-    dotsWrap.appendChild(d);
-  });
-  if(!('IntersectionObserver' in window)) return;
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting && e.intersectionRatio>0.55){
-        var idx=cards.indexOf(e.target);
-        if(idx>-1){
-          Array.prototype.forEach.call(dotsWrap.children, function(d,i){ d.classList.toggle('active', i===idx); });
-        }
-      }
+  function setupCarousel(gridEl, dotsEl, itemSelector){
+    if(!gridEl || !dotsEl) return;
+    var items=Array.prototype.slice.call(gridEl.querySelectorAll(itemSelector));
+    if(!items.length) return;
+    items.forEach(function(_, i){
+      var d=document.createElement('span');
+      if(i===0) d.classList.add('active');
+      dotsEl.appendChild(d);
     });
-  }, {root:grid, threshold:[0.55]});
-  cards.forEach(function(c){ io.observe(c); });
-
-  /* hide the swipe hint after first manual interaction */
-  var hint=document.querySelector('.swipe-hint');
-  if(hint){
-    grid.addEventListener('scroll', function(){ hint.style.animation='none'; hint.style.opacity='0'; }, {passive:true, once:true});
+    if(!('IntersectionObserver' in window)) return;
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting && e.intersectionRatio>0.55){
+          var idx=items.indexOf(e.target);
+          if(idx>-1){
+            Array.prototype.forEach.call(dotsEl.children, function(d,i){ d.classList.toggle('active', i===idx); });
+          }
+        }
+      });
+    }, {root:gridEl, threshold:[0.55]});
+    items.forEach(function(it){ io.observe(it); });
   }
+
+  var toursGrid=document.querySelector('#tours .grid');
+  setupCarousel(toursGrid, document.getElementById('tours-dots'), '.card');
+  setupCarousel(document.querySelector('.reviews-grid'), document.getElementById('reviews-dots'), '.review-card');
+  setupCarousel(document.querySelector('.why-grid'), document.getElementById('why-dots'), '.why');
+
+  /* hide the swipe hint after first manual interaction on the tours carousel */
+  var hint=document.querySelector('.swipe-hint');
+  if(hint && toursGrid){
+    toursGrid.addEventListener('scroll', function(){ hint.style.animation='none'; hint.style.opacity='0'; }, {passive:true, once:true});
+  }
+})();
+
+/* GA4 outbound click tracking: booking, Instagram, itinerary */
+(function(){
+  if (typeof gtag !== 'function') return;
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a');
+    if(!a || !a.href) return;
+    var href = a.href;
+    var category = null;
+    if(/getyourguide\.com|gyg\.me/i.test(href)) category = 'booking_click';
+    else if(/instagram\.com/i.test(href)) category = 'instagram_click';
+    else if(/upwork\.com/i.test(href)) category = 'itinerary_click';
+    else if(href.indexOf('mailto:') === 0) category = 'email_click';
+    if(category){
+      gtag('event', category, {
+        link_text: (a.textContent || '').trim().slice(0, 60),
+        link_url: href,
+        page_location: window.location.href
+      });
+    }
+  });
 })();
 </script>
 </body>

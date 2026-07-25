@@ -105,7 +105,6 @@
     var href = a.href;
     var category = null;
     if(/getyourguide\.com|gyg\.me/i.test(href)) category = "booking_click";
-    else if(/substack\.com/i.test(href)) category = "substack_click";
     else if(/instagram\.com/i.test(href)) category = "instagram_click";
     else if(/upwork\.com/i.test(href)) category = "itinerary_click";
     else if(href.indexOf("mailto:") === 0) category = "email_click";
