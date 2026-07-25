@@ -84,9 +84,31 @@
   .top-nav { display:flex; align-items:center; gap:1.1rem; }
   .top-nav > a:not(.top-cta) { color:var(--ink); text-decoration:none; font-weight:600; font-size:.9rem; }
   .top-nav > a:not(.top-cta):hover { color:var(--accent); }
-  .ig-link { display:inline-flex; align-items:center; justify-content:center; color:var(--ink); }
-  .ig-link:hover { color:var(--accent); }
+  .ig-link { display:inline-flex; align-items:center; justify-content:center; color:var(--ink); opacity:.75; transition:opacity .15s,transform .15s; }
+  .ig-link:hover { opacity:1; transform:translateY(-1px); }
   .ig-link svg { width:19px; height:19px; display:block; }
+  .top-nav > a.ig-link.substack { color:#FF6719; }
+  .top-nav > a.ig-link.instagram { color:#C1367B; }
+  /* ---------- Newsletter strip ---------- */
+  .news-strip {
+    background:linear-gradient(135deg,#FF6719 0%,#e8551a 100%);
+    padding:2.6rem 1rem; text-align:center; color:#fff;
+  }
+  .news-strip .wrap { max-width:640px; }
+  .news-strip .news-kicker {
+    display:inline-flex; align-items:center; gap:.4rem; font-size:.78rem; font-weight:700;
+    letter-spacing:.08em; text-transform:uppercase; background:rgba(255,255,255,.18);
+    padding:.35rem .85rem; border-radius:999px; margin-bottom:1rem;
+  }
+  .news-strip h2 { font-size:1.65rem; color:#fff; margin-bottom:.5rem; }
+  .news-strip p { color:rgba(255,255,255,.9); font-size:.95rem; margin-bottom:1.4rem; }
+  .news-strip .btn-news {
+    display:inline-flex; align-items:center; gap:.5rem; background:#fff; color:#e8551a;
+    font-weight:700; padding:.85rem 1.7rem; border-radius:999px; text-decoration:none;
+    font-size:.95rem; transition:transform .15s,box-shadow .15s; box-shadow:0 6px 18px rgba(0,0,0,.15);
+  }
+  .news-strip .btn-news:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(0,0,0,.2); }
+  .news-strip .btn-news svg { width:17px; height:17px; }
   /* ---------- Ticker ---------- */
   .ticker { overflow:hidden; background:#1c2618; padding:.6rem 0; }
   .ticker-track { display:inline-flex; width:max-content; gap:2.2rem; animation:tickerScroll 34s linear infinite; }
@@ -461,8 +483,8 @@
     <a class="brand" href="#top"><img class="brand-mark" src="favicon.png" alt=""><span class="brand-full">Hidden <span>Tokyo</span> Experiences</span><span class="brand-short">HTE</span></a>
     <nav class="top-nav">
       <a href="blog/">Journal</a>
-      <a class="ig-link" href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener" aria-label="Subscribe on Substack" title="Subscribe on Substack"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
-      <a class="ig-link" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener" aria-label="Follow on Instagram" title="Follow on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg></a>
+      <a class="ig-link substack" href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener" aria-label="Subscribe on Substack" title="Subscribe on Substack"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+      <a class="ig-link instagram" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener" aria-label="Follow on Instagram" title="Follow on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/></svg></a>
       <a class="top-cta" href="#tours">Book a Tour</a>
     </nav>
   </div>
@@ -629,6 +651,18 @@
       <div class="why"><div class="ico">🗾</div><h3>A real local</h3><p>Tokyo born and raised — these are the places I go on my own days off.</p></div>
       <div class="why"><div class="ico">🛡️</div><h3>Book with confidence</h3><p>Instant confirmation and free cancellation via GetYourGuide.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="news-strip">
+  <div class="wrap">
+    <span class="news-kicker">✍️ The Journal, by email</span>
+    <h2>New hidden spots, before anyone else.</h2>
+    <p>One short email when there's a new tour, a new corner of Tokyo, or a story worth telling. No spam, unsubscribe anytime.</p>
+    <a class="btn-news" href="https://substack.com/@hidefumikidachi" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+      Subscribe on Substack →
+    </a>
   </div>
 </section>
 
