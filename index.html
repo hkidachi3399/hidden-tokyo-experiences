@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hidden Tokyo Experiences — Small-Group Tours by a Local Guide</title>
-<meta name="description" content="★5.0-rated small-group walking tours under 45 minutes from Ikebukuro. Zen temples, Totoro's forest, sake breweries, samurai ruins — the Tokyo nobody tells you about. Guided by an English-speaking local.">
+<meta name="description" content="★5.0-rated small-group walking tours under 45 minutes from Ikebukuro. Zen temples, Totoro's forest, sake breweries, samurai ruins — the Tokyo nobody tells you about. Guided by a licensed English-speaking local.">
 <meta property="og:title" content="Hidden Tokyo Experiences">
 <meta property="og:description" content="The Tokyo nobody tells you about. ★5.0-rated small-group tours by a local guide.">
 <meta property="og:type" content="website">
@@ -313,6 +313,13 @@
   .card-cta:hover { background:var(--accent); box-shadow:0 8px 20px rgba(181,67,47,.3); }
   .card-cta:hover::after { transform:translateX(3px); }
 
+  /* ---------- Ask / customize link ---------- */
+  .ask-link {
+    display:block; text-align:center; font-size:.78rem; font-weight:600;
+    color:var(--accent); text-decoration:none; margin-top:.55rem;
+  }
+  .ask-link:hover { text-decoration:underline; }
+
   /* ---------- Guide ---------- */
   .guide { background:#f1ece2; position:relative; overflow:hidden; }
   .guide::before {
@@ -374,6 +381,30 @@
   .review-badge {
     display:inline-flex; align-items:center; gap:.35rem; font-size:.7rem; font-weight:600;
     color:var(--green); background:#eef3ea; padding:.25rem .6rem; border-radius:999px; margin-top:.1rem;
+  }
+
+  /* ---------- Custom request form ---------- */
+  .request-form { max-width:640px; margin:0 auto; }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
+  .request-form label {
+    display:flex; flex-direction:column; gap:.4rem;
+    font-size:.82rem; font-weight:600; color:var(--ink);
+  }
+  .request-form label span { color:var(--accent); margin-left:.15em; }
+  .request-form input,
+  .request-form select {
+    font:inherit; font-size:.92rem; font-weight:400; color:var(--ink);
+    background:var(--card); border:1.5px solid var(--line); border-radius:10px;
+    padding:.65rem .8rem; transition:border-color .2s, box-shadow .2s;
+  }
+  .request-form input:focus,
+  .request-form select:focus {
+    outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(181,67,47,.12);
+  }
+  .request-actions { display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin-top:.4rem; }
+  .request-note { color:#6f675e; font-size:.8rem; text-align:center; margin-top:.9rem; }
+  @media (max-width:640px) {
+    .form-row { grid-template-columns:1fr; }
   }
 
   /* ---------- Final CTA ---------- */
@@ -484,7 +515,7 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TravelAgency","name":"Hidden Tokyo Experiences","url":"https://hkidachi3399.github.io/hidden-tokyo-experiences/","image":"https://hkidachi3399.github.io/hidden-tokyo-experiences/hero.jpg","description":"Small-group walking tours and cultural experiences in west Tokyo — Zen temples, Totoro's forest, sake breweries and samurai ruins — guided by an English-speaking local.","areaServed":"Tokyo, Japan","email":"hkidachi@gmail.com","telephone":"+81-70-8474-2507","priceRange":"¥8,000–¥10,500","address":{"@type":"PostalAddress","addressRegion":"Tokyo","addressCountry":"JP"},"founder":{"@type":"Person","name":"Hide"},"sameAs":["https://www.instagram.com/hiddentokyo_experiences/"],"makesOffer":[
+{"@context":"https://schema.org","@type":"TravelAgency","name":"Hidden Tokyo Experiences","url":"https://hkidachi3399.github.io/hidden-tokyo-experiences/","image":"https://hkidachi3399.github.io/hidden-tokyo-experiences/hero.jpg","description":"Small-group walking tours and cultural experiences in west Tokyo — Zen temples, Totoro's forest, sake breweries and samurai ruins — guided by an English-speaking local.","areaServed":"Tokyo, Japan","email":"hkidachi@gmail.com","founder":{"@type":"Person","name":"Hide"},"sameAs":["https://www.instagram.com/hiddentokyo_experiences/"],"makesOffer":[
 {"@type":"Offer","name":"Tokyo: Hanno Forest, Fermentation Park & Sake Tasting","url":"https://gyg.me/YSpqiqDU"},
 {"@type":"Offer","name":"Totoro-Inspired Forest, Lake Sayama & Local Tea Walk","url":"https://gyg.me/I7x6jaDO"},
 {"@type":"Offer","name":"Ultimate Spa Japon Retreat & Kurome River Stroll","url":"https://gyg.me/wYr1PbxA"},
@@ -565,6 +596,7 @@
           <span class="per">per person</span>
         </div>
         <a class="btn btn-primary" href="https://www.getyourguide.com/hanno-l153846/tokyo-hanno-forest-fermentation-park-sake-tour-t1352325/?partner_id=YFZH76Z&utm_medium=online_publisher&cmp=hte-lp-hanno-feature" target="_blank" rel="noopener sponsored">Book on GetYourGuide →</a> <a class="btn btn-ghost" style="border:1.5px solid var(--accent); color:var(--accent);" href="blog/hanno-sake-forest-tokyo.html">Read the full story →</a>
+        <a class="ask-link" style="display:inline-block; margin-top:.7rem;" href="#custom-request" data-tour="hanno">Date not available? Ask us to customize →</a>
       </div>
     </div>
   </div>
@@ -575,7 +607,7 @@
     <div class="sec-head">
       <span class="kicker">All experiences</span>
       <h2>Five more ways to escape the crowds</h2>
-      <p>Every tour is ★5.0-rated, small-group, and books instantly on GetYourGuide.</p>
+      <p>Every tour is ★5.0-rated, small-group, and books instantly on GetYourGuide. Don't see a date that works? We take custom requests too — <a href="#custom-request">just ask</a>.</p>
     </div>
     <div style="text-align:center;"><span class="swipe-hint">👉 Swipe for more tours</span></div>
     <div class="grid">
@@ -588,7 +620,7 @@
           <p class="desc">Totoro's forest is real — and it's just 40 minutes from Tokyo. Misty cedar paths, a hidden lake, and a cup of tea poured by a local farmer.</p>
           <div class="tour-tags"><span class="tag">Half-day</span><span class="tag">Nature walk</span><span class="tag">Tea experience</span></div>
           <a class="card-cta" href="https://www.getyourguide.com/tokyo-l193/tokyo-totoro-forest-hiking-tour-in-sayama-hills-t1136555/?partner_id=YFZH76Z&utm_medium=online_publisher&cmp=hte-lp-totoro" target="_blank" rel="noopener sponsored">Book this tour</a>
-                  <a class="card-cta" style="background:transparent; border:1.5px solid var(--accent); color:var(--accent); margin-top:.5rem;" href="blog/totoro-forest-tokyo.html">Read the full story</a>
+          <a class="ask-link" href="#custom-request" data-tour="totoro">Date not available? Ask/Customize →</a>
         </div>
       </div>
 
@@ -600,7 +632,7 @@
           <p class="desc">How Tokyo locals truly unwind — and tourists almost never find out. A quiet riverside walk, then an authentic Japanese bathhouse. No crowds. No rush.</p>
           <div class="tour-tags"><span class="tag">Half-day</span><span class="tag">Spa entry</span><span class="tag">Wellness</span></div>
           <a class="card-cta" href="https://www.getyourguide.com/tokyo-l193/tokyo-kurome-river-walk-and-spa-japon-experience-t1135290/?partner_id=YFZH76Z&utm_medium=online_publisher&cmp=hte-lp-spa" target="_blank" rel="noopener sponsored">Book this tour</a>
-                  <a class="card-cta" style="background:transparent; border:1.5px solid var(--accent); color:var(--accent); margin-top:.5rem;" href="blog/spa-japon-kurome-river-tokyo.html">Read the full story</a>
+          <a class="ask-link" href="#custom-request" data-tour="spa">Date not available? Ask/Customize →</a>
         </div>
       </div>
 
@@ -612,6 +644,7 @@
           <p class="desc">500 years of silence. One path. No tourists. Walk the ancient monks' path through cedar forest and feel what "Zen" actually means.</p>
           <div class="tour-tags"><span class="tag">Half-day</span><span class="tag">Meditation</span><span class="tag">Temple</span></div>
           <a class="card-cta" href="https://www.getyourguide.com/tokyo-l193/tokyo-heirinji-temple-tour-with-matcha-t1130692/?partner_id=YFZH76Z&utm_medium=online_publisher&cmp=hte-lp-heirinji" target="_blank" rel="noopener sponsored">Book this tour</a>
+          <a class="ask-link" href="#custom-request" data-tour="zen">Date not available? Ask/Customize →</a>
         </div>
       </div>
 
@@ -623,6 +656,7 @@
           <p class="desc">Manga wasn't born in Akihabara. Surprise. The real origin story of manga and anime culture is hidden in a quiet corner of Tokyo — museum entry included.</p>
           <div class="tour-tags"><span class="tag">Half-day</span><span class="tag">Museum entry</span><span class="tag">Pop culture</span></div>
           <a class="card-cta" href="https://www.getyourguide.com/tokyo-l193/tokyo-anime-and-manga-tour-with-museum-entry-t1120149/?partner_id=YFZH76Z&utm_medium=online_publisher&cmp=hte-lp-manga" target="_blank" rel="noopener sponsored">Book this tour</a>
+          <a class="ask-link" href="#custom-request" data-tour="manga">Date not available? Ask/Customize →</a>
         </div>
       </div>
 
@@ -634,6 +668,7 @@
           <p class="desc">A samurai fortress. A hidden park. The best udon you've never heard of. Walk the castle grounds, then a bowl of Musashino udon that'll ruin all other noodles for you.</p>
           <div class="tour-tags"><span class="tag">Half-day</span><span class="tag">History</span><span class="tag">Udon lunch</span></div>
           <a class="card-cta" href="https://www.getyourguide.com/tokyo-l193/tokyo-shakujii-park-tour-with-musashino-udon-lunch-t1120161/?partner_id=YFZH76Z&utm_medium=online_publisher&cmp=hte-lp-shakujii" target="_blank" rel="noopener sponsored">Book this tour</a>
+          <a class="ask-link" href="#custom-request" data-tour="samurai">Date not available? Ask/Customize →</a>
         </div>
       </div>
 
@@ -642,25 +677,53 @@
   </div>
 </section>
 
-<section id="coming-soon" style="padding-top:0;">
+<section id="custom-request" style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
   <div class="wrap">
     <div class="sec-head">
-      <span class="kicker">Coming October 2026</span>
-      <h2>Next up: a real Tokyo suburb farm</h2>
+      <span class="kicker">Don't see your dates?</span>
+      <h2>Ask for a custom date, private group, or new experience</h2>
+      <p>Every tour above books instantly on GetYourGuide — but if your dates aren't listed, or you want something tailored (family group, different day, add-on stop), just tell me. I reply within 24h with options.</p>
     </div>
-    <div class="grid" style="grid-template-columns:1fr; max-width:520px; margin:0 auto;">
-      <div class="card" data-tour="kiyose">
-        <div class="card-media" style="background:linear-gradient(150deg,#8fae6b,#4f6b3a);">
-          <span class="badge-new" style="background:linear-gradient(150deg,var(--green),#2c4029);">Coming Soon</span>
-        </div>
-        <div class="card-body">
-          <h3>Kiyose Farm-to-Table: Harvest, Local Market &amp; Hidden Soba Spot</h3>
-          <p class="desc">A real working farm plot I tend myself, a neighborhood JA market, and a hidden soba shop famous for its giant vegetable tempura — all within walking distance in a quiet Tokyo suburb.</p>
-          <div class="tour-tags"><span class="tag">Half-day</span><span class="tag">Farm work</span><span class="tag">Soba lunch</span></div>
-          <a class="card-cta" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener" style="background:var(--green);">Follow for launch updates</a>
-        </div>
+    <form id="customRequestForm" class="request-form" novalidate>
+      <div class="form-row">
+        <label>Name<span aria-hidden="true">*</span>
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label>Email<span aria-hidden="true">*</span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
       </div>
-    </div>
+      <div class="form-row">
+        <label>Which tour?<span aria-hidden="true">*</span>
+          <select name="tour" id="requestTourSelect" required>
+            <option value="" disabled selected>Select a tour</option>
+            <option value="Hanno Forest, Fermentation Park &amp; Sake Tasting">Hanno Forest, Fermentation Park &amp; Sake Tasting</option>
+            <option value="Totoro-Inspired Forest, Lake Sayama &amp; Local Tea Walk">Totoro-Inspired Forest, Lake Sayama &amp; Local Tea Walk</option>
+            <option value="Ultimate Spa Japon Retreat &amp; Kurome River Stroll">Ultimate Spa Japon Retreat &amp; Kurome River Stroll</option>
+            <option value="Heirinji Temple Monks' Path &amp; Forest Meditation Walk">Heirinji Temple Monks' Path &amp; Forest Meditation Walk</option>
+            <option value="Birthplace of Manga &amp; Anime Guided Museum Walk">Birthplace of Manga &amp; Anime Guided Museum Walk</option>
+            <option value="Hidden Shakujii Park Walk with Samurai Ruins &amp; Udon">Hidden Shakujii Park Walk with Samurai Ruins &amp; Udon</option>
+            <option value="Not sure / something custom">Not sure / something custom</option>
+          </select>
+        </label>
+        <label>Preferred date(s)<span aria-hidden="true">*</span>
+          <input type="text" name="dates" placeholder="e.g. Oct 14, or Oct 12–16" required>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>Number of guests
+          <input type="number" name="guests" min="1" max="10" placeholder="e.g. 2">
+        </label>
+        <label>Message (optional)
+          <input type="text" name="message" placeholder="Anything else I should know?">
+        </label>
+      </div>
+      <div class="request-actions">
+        <button type="submit" class="btn btn-primary">✉ Send Request via Email</button>
+        <a class="btn" style="border:1.5px solid var(--accent); color:var(--accent);" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener">📷 Or DM us on Instagram</a>
+      </div>
+      <p class="request-note">"Send Request" opens your email app with everything pre-filled — nothing is sent automatically. Prefer chat? DM @hiddentokyo_experiences on Instagram instead.</p>
+    </form>
   </div>
 </section>
 
@@ -718,7 +781,7 @@
       </div>
       <div class="guide-txt">
         <h2>Meet your guide, Hide</h2>
-        <p>I've called Tokyo home for years, and spent my weekends exploring the corners of this city that never make it into guidebooks. By day I'm a full-time account manager at a foreign-affiliated food company — that's not just trivia: it's why I actually know what's fermenting at the sake brewery and fermentation park I take guests to, instead of reciting a script. On weekends I guide small groups (three guests max) through the Tokyo I've come to know inside and out — Zen temples, forest trails, neighborhood bathhouses, and noodle shops nobody photographs. Every tour I've run is rated ★5.0 on GetYourGuide by guests from Switzerland, the UK, and the US. I've also trained for years with Toastmasters, so an awkward, hard-to-follow guide is one thing you won't get here.</p>
+        <p>I was born and raised in Tokyo, and I've spent my life exploring the corners of this city that never make it into guidebooks. By day I work in international business; on weekends I share the places I actually love — quiet temples, forest trails, neighborhood bathhouses, and the best noodle shops nobody photographs.</p>
         <p>Every tour is small (three guests max), unhurried, and personal. You won't follow a flag. You'll walk with a local friend.</p>
         <div style="display:flex; flex-direction:column; align-items:flex-start; gap:.55rem; font-size:.9rem; margin-bottom:.8rem;">
           <a href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener" style="color:var(--accent); font-weight:600; text-decoration:none; display:inline-block;">📷 Follow along on Instagram →</a>
@@ -738,36 +801,10 @@
     <div class="why-grid">
       <div class="why"><div class="ico">⭐</div><h3>★5.0 on GetYourGuide</h3><p>Every listed tour holds a perfect rating from past guests.</p></div>
       <div class="why"><div class="ico">👥</div><h3>Truly small groups</h3><p>Three guests maximum. Conversations, not headcounts.</p></div>
-      <div class="why"><div class="ico">🗾</div><h3>A real local</h3><p>Tokyo-based for years — these are the places I go on my own days off.</p></div>
+      <div class="why"><div class="ico">🗾</div><h3>A real local</h3><p>Tokyo born and raised — these are the places I go on my own days off.</p></div>
       <div class="why"><div class="ico">🛡️</div><h3>Book with confidence</h3><p>Instant confirmation and free cancellation via GetYourGuide.</p></div>
     </div>
     <div class="grid-dots" id="why-dots" aria-hidden="true"></div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="kicker">Good to know</span>
-      <h2>Frequently asked questions</h2>
-    </div>
-    <div style="max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:1.3rem;">
-      <div>
-        <h3 style="font-size:1.02rem; margin-bottom:.35rem;">What is Hidden Tokyo Experiences?</h3>
-        <p style="color:#4d463d; font-size:.95rem;">Hidden Tokyo Experiences is a small-group, English-guided walking tour company in west Tokyo, run by a local guide named Hide. Tours cover Zen temples, forest trails, sake breweries, and samurai ruins most visitors never see, capped at three guests per tour.</p>
-      </div>
-      <div>
-        <h3 style="font-size:1.02rem; margin-bottom:.35rem;">Are these tours good for first-time visitors who want to avoid crowds?</h3>
-        <p style="color:#4d463d; font-size:.95rem;">Yes. All tours are set in west Tokyo neighborhoods 40–60 minutes from Ikebukuro that see almost no tourist traffic, unlike Asakusa or Shibuya. Groups are capped at three guests for a personal, unhurried pace.</p>
-      </div>
-      <div>
-        <h3 style="font-size:1.02rem; margin-bottom:.35rem;">Is this a good tour for solo travelers?</h3>
-        <p style="color:#4d463d; font-size:.95rem;">Yes. Because groups are capped at three guests, solo travelers often end up walking one-on-one with the guide rather than joining a large crowd.</p>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:1.6rem;">
-      <a class="btn" style="border:1.5px solid var(--accent); color:var(--accent);" href="faq.html">See all 12 FAQs →</a>
-    </div>
   </div>
 </section>
 
@@ -799,7 +836,7 @@
 <footer>
   <img class="f-mark" src="favicon.png" alt="Hidden Tokyo Experiences emblem" loading="lazy">
   <a class="brand" href="#top">Hidden <span>Tokyo</span> Experiences</a>
-  <p><a class="social" href="blog/">Read our Journal</a> · <a class="social" href="faq.html">FAQ</a> · Follow along: <a class="social" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener">@hiddentokyo_experiences</a> · <a class="social" href="mailto:hkidachi@gmail.com">✉ Contact us</a></p>
+  <p><a class="social" href="blog/">Read our Journal</a> · Follow along: <a class="social" href="https://www.instagram.com/hiddentokyo_experiences/" target="_blank" rel="noopener">@hiddentokyo_experiences</a> · <a class="social" href="mailto:hkidachi@gmail.com">✉ Contact us</a></p>
   <p style="font-size:.72rem; color:#9c9488; margin-top:.3rem;">Some links on this page are affiliate links — booking through them supports this site at no extra cost to you.</p>
   <p>© 2026 Hidden Tokyo Experiences · Tokyo, Japan</p>
 </footer>
@@ -818,7 +855,7 @@
     card.style.order='-1';
     card.classList.add('tow');
     var m=card.querySelector('.card-media');
-    if(m){var b=document.createElement('span');b.className='tow-badge';b.textContent='\u2605 Tour of the Week';m.appendChild(b);}
+    if(m){var b=document.createElement('span');b.className='tow-badge';b.textContent='★ Tour of the Week';m.appendChild(b);}
   }
 })();
 
@@ -969,7 +1006,58 @@
   }
 })();
 
-/* GA4 outbound click tracking: booking, Instagram, itinerary */
+/* Custom request form: prefill from tour card "Ask/Customize" links, submit via mailto */
+(function(){
+  var tourNames={
+    hanno:"Hanno Forest, Fermentation Park & Sake Tasting",
+    totoro:"Totoro-Inspired Forest, Lake Sayama & Local Tea Walk",
+    spa:"Ultimate Spa Japon Retreat & Kurome River Stroll",
+    zen:"Heirinji Temple Monks' Path & Forest Meditation Walk",
+    manga:"Birthplace of Manga & Anime Guided Museum Walk",
+    samurai:"Hidden Shakujii Park Walk with Samurai Ruins & Udon"
+  };
+  var select=document.getElementById('requestTourSelect');
+  document.querySelectorAll('.ask-link[data-tour]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var key=a.getAttribute('data-tour');
+      var name=tourNames[key];
+      if(select && name){
+        Array.prototype.forEach.call(select.options, function(o){ if(o.value===name) o.selected=true; });
+      }
+    });
+  });
+
+  var form=document.getElementById('customRequestForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name=form.name.value.trim();
+    var email=form.email.value.trim();
+    var tour=form.tour.value;
+    var dates=form.dates.value.trim();
+    var guests=form.guests.value.trim();
+    var message=form.message.value.trim();
+    if(!name || !email || !tour || !dates){
+      alert('Please fill in name, email, tour, and preferred date(s).');
+      return;
+    }
+    var subject='Custom tour request — '+tour;
+    var body=[
+      'Name: '+name,
+      'Email: '+email,
+      'Tour: '+tour,
+      'Preferred date(s): '+dates,
+      'Guests: '+(guests||'-'),
+      'Message: '+(message||'-')
+    ].join('\n');
+    if(typeof gtag==='function'){
+      gtag('event','custom_request_submit',{tour:tour, page_location: window.location.href});
+    }
+    window.location.href='mailto:hkidachi@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  });
+})();
+
+/* GA4 outbound click tracking: booking, Instagram, itinerary, email */
 (function(){
   if (typeof gtag !== 'function') return;
   document.addEventListener('click', function(e){
@@ -981,6 +1069,7 @@
     else if(/instagram\.com/i.test(href)) category = 'instagram_click';
     else if(/upwork\.com/i.test(href)) category = 'itinerary_click';
     else if(href.indexOf('mailto:') === 0) category = 'email_click';
+    else if(/#custom-request/.test(href) && a.classList.contains('ask-link')) category = 'custom_request_click';
     if(category){
       gtag('event', category, {
         link_text: (a.textContent || '').trim().slice(0, 60),
@@ -990,9 +1079,6 @@
     }
   });
 })();
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"TravelAgency","name":"Hidden Tokyo Experiences","url":"https://hkidachi3399.github.io/hidden-tokyo-experiences/","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","bestRating":"5","reviewCount":"6"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Kirsten"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"An incredible tour through the magic of Manga in Japan! Hide patiently walked with me at my speed, wisely and kindly answered all my questions, and helped me understand so much about the art, the history and the neighborhood that inspired it all."},{"@type":"Review","author":{"@type":"Person","name":"Michael"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"Hide was an excellent guide who kept us very entertained and took an interest in our lives. He was very well informed and time flew by - would recommend to friends who are also interested in Manga."},{"@type":"Review","author":{"@type":"Person","name":"Mark"},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5"},"reviewBody":"The colors of the leaves were beautiful and it was a very relaxing walk. The buckwheat noodles were delicious and I enjoyed the company of the guide."}]}
 </script>
 </body>
 </html>
