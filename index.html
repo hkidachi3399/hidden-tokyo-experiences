@@ -299,6 +299,8 @@
   .m-zen     { background-image:url('zen.jpg'); background-position:75% center; }
   .m-manga   { background-image:url('manga.jpg'); }
   .m-samurai { background-image:url('samurai.jpg'); }
+  .m-kiyose  { background-image:linear-gradient(140deg,#c9b783 0%,#8a9a5b 65%,#5f7245 100%); }
+  .coming-badge { color:var(--gold); font-size:.82rem; font-weight:700; margin-bottom:.45rem; letter-spacing:.02em; }
   .card-body { padding:1.35rem 1.35rem 1.5rem; display:flex; flex-direction:column; flex:1; }
   .stars { color:var(--gold); font-size:.82rem; font-weight:600; margin-bottom:.45rem; letter-spacing:.04em; }
   .card-body h3 { font-size:1.13rem; line-height:1.3; margin-bottom:.55rem; }
@@ -561,13 +563,13 @@
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>Totoro's Forest</span><span>Zen Temple Walk</span><span>Sake &amp; Fermentation</span><span>Samurai Ruins</span><span>Manga Birthplace</span><span>Riverside Bathhouse</span>
-    <span>Totoro's Forest</span><span>Zen Temple Walk</span><span>Sake &amp; Fermentation</span><span>Samurai Ruins</span><span>Manga Birthplace</span><span>Riverside Bathhouse</span>
+    <span>Totoro's Forest</span><span>Zen Temple Walk</span><span>Sake &amp; Fermentation</span><span>Samurai Ruins</span><span>Manga Birthplace</span><span>Riverside Bathhouse</span><span>Kiyose Farm &amp; Soba</span>
+    <span>Totoro's Forest</span><span>Zen Temple Walk</span><span>Sake &amp; Fermentation</span><span>Samurai Ruins</span><span>Manga Birthplace</span><span>Riverside Bathhouse</span><span>Kiyose Farm &amp; Soba</span>
   </div>
 </div>
 
 <section class="stats" aria-label="Quick facts">
-  <div class="stat"><b data-count="6">0</b><span>Signature Tours</span></div>
+  <div class="stat"><b data-count="7">0</b><span>Signature Tours</span></div>
   <div class="stat"><b data-count="3">0</b><span>Guests Max</span></div>
   <div class="stat"><b data-count="45" data-prefix="&lt; " data-suffix=" min">0</b><span>From Ikebukuro</span></div>
   <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Local-Guided</span></div>
@@ -606,8 +608,8 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="kicker">All experiences</span>
-      <h2>Five more ways to escape the crowds</h2>
-      <p>Every tour is ★5.0-rated, small-group, and books instantly on GetYourGuide. Don't see a date that works? We take custom requests too — <a href="#custom-request">just ask</a>.</p>
+      <h2>Six more ways to escape the crowds</h2>
+      <p>Every listed tour is ★5.0-rated, small-group, and books instantly on GetYourGuide. Don't see a date that works — or want our newest farm tour? We take custom requests too — <a href="#custom-request">just ask</a>.</p>
     </div>
     <div style="text-align:center;"><span class="swipe-hint">👉 Swipe for more tours</span></div>
     <div class="grid">
@@ -672,6 +674,17 @@
         </div>
       </div>
 
+      <div class="card" data-tour="kiyose">
+        <div class="card-media m-kiyose" role="img" aria-label="Farm fields and local market stalls in Kiyose"></div>
+        <div class="card-body">
+          <div class="coming-badge">🌾 New — opening this fall</div>
+          <h3>Kiyose Farm, Local Market &amp; Soba Lunch</h3>
+          <p class="desc">A working farm just past Tokyo's edge, a stop at the local produce market, and handmade soba for lunch. Our newest tour — calendar opens mid-October, but you can be first in line.</p>
+          <div class="tour-tags"><span class="tag">Half-day</span><span class="tag">Farm visit</span><span class="tag">Soba lunch</span></div>
+          <a class="ask-link" style="background:var(--gold); color:#fff; display:block; text-align:center; font-weight:600; font-size:.9rem; padding:.74rem; border-radius:999px; margin-top:0;" href="#custom-request" data-tour="kiyose">🔔 Notify me when dates open</a>
+        </div>
+      </div>
+
     </div>
     <div class="grid-dots" id="tours-dots" aria-hidden="true"></div>
   </div>
@@ -703,6 +716,7 @@
             <option value="Heirinji Temple Monks' Path &amp; Forest Meditation Walk">Heirinji Temple Monks' Path &amp; Forest Meditation Walk</option>
             <option value="Birthplace of Manga &amp; Anime Guided Museum Walk">Birthplace of Manga &amp; Anime Guided Museum Walk</option>
             <option value="Hidden Shakujii Park Walk with Samurai Ruins &amp; Udon">Hidden Shakujii Park Walk with Samurai Ruins &amp; Udon</option>
+            <option value="Kiyose Farm, Local Market &amp; Soba Lunch (opening October)">Kiyose Farm, Local Market &amp; Soba Lunch (opening October)</option>
             <option value="Not sure / something custom">Not sure / something custom</option>
           </select>
         </label>
@@ -842,7 +856,7 @@
 </footer>
 
 <div class="mobile-cta" aria-hidden="true">
-  <a class="btn btn-primary" href="#tours" style="width:100%;">See All 6 Tours &amp; Book →</a>
+  <a class="btn btn-primary" href="#tours" style="width:100%;">See All 7 Tours &amp; Book →</a>
 </div>
 
 <script>
@@ -1014,7 +1028,8 @@
     spa:"Ultimate Spa Japon Retreat & Kurome River Stroll",
     zen:"Heirinji Temple Monks' Path & Forest Meditation Walk",
     manga:"Birthplace of Manga & Anime Guided Museum Walk",
-    samurai:"Hidden Shakujii Park Walk with Samurai Ruins & Udon"
+    samurai:"Hidden Shakujii Park Walk with Samurai Ruins & Udon",
+    kiyose:"Kiyose Farm, Local Market & Soba Lunch (opening October)"
   };
   var select=document.getElementById('requestTourSelect');
   document.querySelectorAll('.ask-link[data-tour]').forEach(function(a){
