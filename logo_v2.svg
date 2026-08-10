@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Hidden Tokyo Experiences logo">
+  <circle cx="300" cy="300" r="290" fill="#f8efdc" stroke="#b98a2e" stroke-width="6"/>
+  <circle cx="410" cy="132" r="24" fill="#d9a83c"/>
+  <circle cx="399" cy="124" r="22" fill="#f8efdc"/>
+  <circle cx="196" cy="126" r="3.5" fill="#d9a83c"/>
+  <circle cx="168" cy="158" r="2.5" fill="#d9a83c"/>
+  <circle cx="442" cy="188" r="2.5" fill="#d9a83c"/>
+  <path d="M195 160 Q300 138 405 160 L405 174 Q300 152 195 174 Z" fill="#b5432f"/>
+  <path d="M205 178 Q300 158 395 178 L395 196 Q300 176 205 196 Z" fill="#1f2b47"/>
+  <rect x="288" y="192" width="24" height="34" fill="#1f2b47"/>
+  <rect x="218" y="226" width="164" height="18" rx="3" fill="#1f2b47"/>
+  <path d="M232 194 L252 194 L256 330 L228 330 Z" fill="#1f2b47"/>
+  <path d="M348 194 L368 194 L372 330 L344 330 Z" fill="#1f2b47"/>
+  <rect x="220" y="330" width="44" height="12" rx="3" fill="#1f2b47"/>
+  <rect x="336" y="330" width="44" height="12" rx="3" fill="#1f2b47"/>
+  <line x1="300" y1="244" x2="300" y2="256" stroke="#b98a2e" stroke-width="3"/>
+  <rect x="286" y="252" width="28" height="8" rx="3" fill="#b98a2e"/>
+  <ellipse cx="300" cy="288" rx="30" ry="32" fill="#b5432f"/>
+  <path d="M288 258 Q283 288 288 318" fill="none" stroke="#8f2f1f" stroke-width="2"/>
+  <path d="M312 258 Q317 288 312 318" fill="none" stroke="#8f2f1f" stroke-width="2"/>
+  <rect x="286" y="316" width="28" height="8" rx="3" fill="#b98a2e"/>
+  <line x1="300" y1="324" x2="300" y2="340" stroke="#b98a2e" stroke-width="2.5"/>
+  <circle cx="300" cy="344" r="4" fill="#b98a2e"/>
+  <text x="300" y="452" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="94" letter-spacing="6" fill="#1f2b47">HTE</text>
+  <text x="300" y="496" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" letter-spacing="3" fill="#8a6a1f">HIDDEN TOKYO EXPERIENCES</text>
+</svg>
