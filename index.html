@@ -300,6 +300,9 @@
   .m-manga   { background-image:url('https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=80,width=1000,height=750,dpr=1/tour_img/3c9c400dfa6baa249b129cc16b019af98d78780f23a633a3545a1733e48d194e.jpg'); }
   .m-samurai { background-image:url('https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=80,width=1000,height=750,dpr=1/tour_img/f239fe8c0dc877302e0d4c7b72f24b511e9b50aca8d64fa5035454dbcd3ae69a.jpg'); }
   .m-kiyose  { background-image:url('https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=80,width=1000,height=750,dpr=1/tour_img/2a25a8d1d30ed2b93e669914a1b3e14e465f7ef9ef3ef806fcdb25fe82543fb5.jpeg'); }
+  /* unify photo tone across tour cards */
+  .card-media { filter:saturate(1.04) contrast(1.02); }
+  .card-media.m-manga { filter:brightness(1.1) saturate(1.1) contrast(1.03); }
   .coming-badge { color:var(--gold); font-size:.82rem; font-weight:700; margin-bottom:.45rem; letter-spacing:.02em; }
   .card-body { padding:1.35rem 1.35rem 1.5rem; display:flex; flex-direction:column; flex:1; }
   .stars { color:var(--gold); font-size:.82rem; font-weight:600; margin-bottom:.45rem; letter-spacing:.04em; }
@@ -803,10 +806,10 @@
       <h2>Not a bus tour. Never a crowd.</h2>
     </div>
     <div class="why-grid">
-      <div class="why"><div class="ico">⭐</div><h3>★5.0 on GetYourGuide</h3><p>Every listed tour holds a perfect rating from past guests.</p></div>
-      <div class="why"><div class="ico">👥</div><h3>Truly small groups</h3><p>Three guests maximum. Conversations, not headcounts.</p></div>
-      <div class="why"><div class="ico">🗾</div><h3>A real local</h3><p>Tokyo born and raised — these are the places I go on my own days off.</p></div>
-      <div class="why"><div class="ico">🛡️</div><h3>Book with confidence</h3><p>Instant confirmation and free cancellation via GetYourGuide.</p></div>
+      <div class="why"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>★5.0 on GetYourGuide</h3><p>Every listed tour holds a perfect rating from past guests.</p></div>
+      <div class="why"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Truly small groups</h3><p>Three guests maximum. Conversations, not headcounts.</p></div>
+      <div class="why"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>A real local</h3><p>Tokyo born and raised — these are the places I go on my own days off.</p></div>
+      <div class="why"><div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div><h3>Book with confidence</h3><p>Instant confirmation and free cancellation via GetYourGuide.</p></div>
     </div>
     <div class="grid-dots" id="why-dots" aria-hidden="true"></div>
   </div>
