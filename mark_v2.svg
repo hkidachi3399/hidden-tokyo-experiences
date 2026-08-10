@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Hidden Tokyo Experiences mark">
+  <circle cx="120" cy="120" r="114" fill="#f8efdc" stroke="#b98a2e" stroke-width="6"/>
+  <path d="M56 62 Q120 48 184 62 L184 72 Q120 58 56 72 Z" fill="#b5432f"/>
+  <path d="M62 75 Q120 63 178 75 L178 87 Q120 75 62 87 Z" fill="#1f2b47"/>
+  <rect x="112" y="84" width="16" height="22" fill="#1f2b47"/>
+  <rect x="72" y="106" width="96" height="13" rx="3" fill="#1f2b47"/>
+  <path d="M80 85 L95 85 L98 186 L77 186 Z" fill="#1f2b47"/>
+  <path d="M145 85 L160 85 L163 186 L142 186 Z" fill="#1f2b47"/>
+  <rect x="70" y="186" width="34" height="10" rx="3" fill="#1f2b47"/>
+  <rect x="136" y="186" width="34" height="10" rx="3" fill="#1f2b47"/>
+  <line x1="120" y1="119" x2="120" y2="128" stroke="#b98a2e" stroke-width="3"/>
+  <rect x="109" y="126" width="22" height="7" rx="3" fill="#b98a2e"/>
+  <ellipse cx="120" cy="154" rx="24" ry="26" fill="#b5432f"/>
+  <path d="M110 130 Q106 154 110 178" fill="none" stroke="#8f2f1f" stroke-width="2"/>
+  <path d="M130 130 Q134 154 130 178" fill="none" stroke="#8f2f1f" stroke-width="2"/>
+  <rect x="109" y="176" width="22" height="7" rx="3" fill="#b98a2e"/>
+  <line x1="120" y1="183" x2="120" y2="194" stroke="#b98a2e" stroke-width="2.5"/>
+  <circle cx="120" cy="197" r="3.5" fill="#b98a2e"/>
+</svg>
