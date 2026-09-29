@@ -885,7 +885,8 @@ animation:cueBounce 1.6s ease-in-out infinite; transition:opacity .4s;
 <script>
 (function(){
 function isoWeek(d){var t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));var dn=(t.getUTCDay()+6)%7;t.setUTCDate(t.getUTCDate()-dn+3);var f=new Date(Date.UTC(t.getUTCFullYear(),0,4));return 1+Math.round((t-f)/604800000);}
-var order=['totoro','spa','zen','manga','samurai'];
+/* same order + same modulo as the Featured hero rotation below, so the grid badge and hero always agree on "this week's tour" (hanno has no grid card, so its week simply shows no grid badge) */
+var order=['hanno','totoro','spa','zen','manga','samurai','kiyose','noodle'];
 var pick=order[isoWeek(new Date())%order.length];
 var card=document.querySelector('[data-tour="'+pick+'"]');
 if(card){
