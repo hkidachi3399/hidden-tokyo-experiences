@@ -16,23 +16,23 @@ gtag('config', 'G-5JVQNQXHXW');
 <meta property="og:title" content="Hidden Tokyo Experiences by Hide">
 <meta property="og:description" content="The Tokyo nobody tells you about. ★5.0-rated small-group tours led by Hide, a Tokyo local.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#22301f">
+<meta name="theme-color" content="#1c2618">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="hero.jpg" fetchpriority="high">
 <style>
 :root {
---ink: #211d1a;
---paper: #faf7f1;
+--ink: #1b1714;
+--paper: #f5efe2;
 --card: #ffffff;
---accent: #b5432f; /* vermillion */
---accent-dark: #93331f;
---green: #3d5a3e;
---gold: #b98a2e;
---gold-soft: rgba(185,138,46,.35);
---muted: #6f675e;
---line: #e6dfd4;
+--accent: #c23e27; /* vermillion */
+--accent-dark: #9c2f1a;
+--green: #2f4a38;
+--gold: #c99a3a;
+--gold-soft: rgba(201,154,58,.35);
+--muted: #6a6153;
+--line: #e3d7c4;
 --radius: 16px;
 --shadow: 0 2px 6px rgba(33,29,26,.05), 0 10px 30px rgba(33,29,26,.07);
 --shadow-lg: 0 4px 10px rgba(33,29,26,.06), 0 22px 48px rgba(33,29,26,.13);
@@ -57,7 +57,7 @@ background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000
 h1,h2,h3,.serif { font-family:'Fraunces',Georgia,serif; letter-spacing:-.012em; }
 img { display:block; max-width:100%; }
 a { color:var(--accent); }
-::selection { background:rgba(185,138,46,.28); }
+::selection { background:rgba(201,154,58,.28); }
 
 /* scroll-reveal */
 .rv { opacity:0; transform:translateY(20px); transition:opacity .75s cubic-bezier(.22,.61,.36,1), transform .75s cubic-bezier(.22,.61,.36,1); }
@@ -133,7 +133,7 @@ letter-spacing:.06em; padding:.3rem .7rem; border-radius:6px; text-transform:upp
 /* ---------- Hero ---------- */
 .hero {
 position:relative; overflow:hidden;
-background:#22301f;
+background:#1c2618;
 color:#f6f2e9; text-align:center;
 padding:5.2rem 1.2rem 4.6rem;
 }
@@ -146,13 +146,13 @@ will-change:transform;
 @keyframes kenburns { from { transform:scale(1); } to { transform:scale(1.09); } }
 .hero::before {
 content:""; position:absolute; inset:0; z-index:1;
-background:linear-gradient(rgba(20,26,17,.6), rgba(20,26,17,.74));
+background:linear-gradient(rgba(16,22,14,.62), rgba(16,22,14,.78));
 pointer-events:none;
 }
 .hero::after {
 content:""; position:absolute; inset:0; z-index:1;
 background:
-radial-gradient(ellipse at 50% 125%, rgba(185,138,46,.28), transparent 58%),
+radial-gradient(ellipse at 50% 125%, rgba(201,154,58,.3), transparent 58%),
 radial-gradient(ellipse at 50% -30%, rgba(0,0,0,.35), transparent 60%);
 pointer-events:none;
 }
@@ -172,11 +172,11 @@ color:#d8cfae; margin-bottom:1.2rem; font-weight:600;
 display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:2rem;
 }
 .pill {
-background:rgba(20,26,17,.35); border:1px solid rgba(255,255,255,.26);
+background:rgba(16,22,14,.38); border:1px solid rgba(255,255,255,.26);
 backdrop-filter:blur(6px);
 border-radius:999px; padding:.36rem .9rem; font-size:.8rem; font-weight:500;
 }
-.pill b { color:#e9c268; }
+.pill b { color:#f0c869; }
 .hero-ctas { display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; }
 .btn {
 display:inline-block; text-decoration:none; font-weight:600; font-size:.95rem;
@@ -184,11 +184,11 @@ padding:.88rem 1.7rem; border-radius:999px;
 transition:transform .2s cubic-bezier(.22,.61,.36,1), box-shadow .2s, background .2s;
 }
 .btn-primary {
-background:linear-gradient(150deg,#c85138 0%, #b5432f 55%, #9c3722 100%);
+background:linear-gradient(150deg,#d1523a 0%, #c23e27 55%, #a52e1a 100%);
 color:#fff;
-box-shadow:0 1px 2px rgba(120,35,20,.4), 0 8px 22px rgba(181,67,47,.38);
+box-shadow:0 1px 2px rgba(140,40,20,.42), 0 8px 22px rgba(194,62,39,.4);
 }
-.btn-primary:hover { transform:translateY(-2px); box-shadow:0 2px 4px rgba(120,35,20,.4), 0 14px 30px rgba(181,67,47,.45); }
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 2px 4px rgba(140,40,20,.42), 0 14px 30px rgba(194,62,39,.48); }
 .btn-ghost { border:1.5px solid rgba(255,255,255,.55); color:#fff; }
 .btn-ghost:hover { background:rgba(255,255,255,.14); transform:translateY(-2px); }
 
@@ -221,9 +221,9 @@ pointer-events:none;
 }
 .badge-new {
 position:absolute; top:1rem; left:1rem; z-index:1;
-background:linear-gradient(150deg,#c99a3b,#a97c22); color:#fff; font-size:.72rem; font-weight:700;
+background:linear-gradient(150deg,#d4a83f,#b8871f); color:#fff; font-size:.72rem; font-weight:700;
 letter-spacing:.08em; padding:.34rem .75rem; border-radius:7px; text-transform:uppercase;
-box-shadow:0 4px 12px rgba(120,90,20,.35);
+box-shadow:0 4px 12px rgba(130,95,20,.38);
 }
 .featured-body { padding:2rem 1.8rem; display:flex; flex-direction:column; justify-content:center; }
 .featured-body .tour-tags { margin-bottom:.7rem; }
@@ -329,11 +329,11 @@ color:var(--accent); text-decoration:none; margin-top:.55rem;
 .ask-link:hover { text-decoration:underline; }
 
 /* ---------- Guide ---------- */
-.guide { background:#f1ece2; position:relative; overflow:hidden; }
+.guide { background:#efe7d5; position:relative; overflow:hidden; }
 .guide::before {
 content:""; position:absolute; inset:0; pointer-events:none;
-background:radial-gradient(ellipse at 12% 20%, rgba(185,138,46,.09), transparent 45%),
-radial-gradient(ellipse at 90% 90%, rgba(181,67,47,.06), transparent 40%);
+background:radial-gradient(ellipse at 12% 20%, rgba(201,154,58,.1), transparent 45%),
+radial-gradient(ellipse at 90% 90%, rgba(194,62,39,.07), transparent 40%);
 }
 .guide-in {
 position:relative;
@@ -365,7 +365,7 @@ transition:transform .3s cubic-bezier(.22,.61,.36,1), box-shadow .3s;
 width:48px; height:48px; border-radius:14px; font-size:1.35rem;
 display:flex; align-items:center; justify-content:center;
 background:linear-gradient(150deg,#fbf6ec,#f3ecdd);
-box-shadow:inset 0 0 0 1px rgba(185,138,46,.18);
+box-shadow:inset 0 0 0 1px rgba(201,154,58,.2);
 margin-bottom:.8rem;
 }
 .why h3 { font-size:1rem; margin-bottom:.4rem; }
@@ -410,7 +410,7 @@ padding:.65rem .8rem; transition:border-color .2s, box-shadow .2s;
 outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(181,67,47,.12);
 }
 .request-actions { display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin-top:.4rem; }
-.request-note { color:#6f675e; font-size:.8rem; text-align:center; margin-top:.9rem; }
+.request-note { color:#6a6153; font-size:.8rem; text-align:center; margin-top:.9rem; }
 @media (max-width:640px) {
 .form-row { grid-template-columns:1fr; }
 }
@@ -419,7 +419,7 @@ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(181,67,47,.1
 .final {
 position:relative; overflow:hidden;
 background:linear-gradient(160deg,#28242e 0%, #38313f 55%, #453a2e 100%);
-border:1px solid rgba(185,138,46,.28);
+border:1px solid rgba(201,154,58,.3);
 color:#f6f2e9; text-align:center; border-radius:20px;
 padding:3.4rem 1.5rem; margin-bottom:4rem;
 box-shadow:var(--shadow-lg);
@@ -427,7 +427,7 @@ box-shadow:var(--shadow-lg);
 .final::before {
 content:""; position:absolute; inset:0; pointer-events:none;
 background:
-radial-gradient(ellipse at 50% 135%, rgba(185,138,46,.3), transparent 55%),
+radial-gradient(ellipse at 50% 135%, rgba(201,154,58,.32), transparent 55%),
 radial-gradient(1.5px 1.5px at 18% 28%, rgba(255,255,255,.5), transparent 100%),
 radial-gradient(1.5px 1.5px at 78% 20%, rgba(255,255,255,.4), transparent 100%),
 radial-gradient(1px 1px at 62% 42%, rgba(255,255,255,.35), transparent 100%),
@@ -857,7 +857,7 @@ animation:cueBounce 1.6s ease-in-out infinite; transition:opacity .4s;
 <a class="btn btn-primary" href="https://www.upwork.com/services/product/lifestyle-a-personalized-japan-travel-itinerary-from-an-active-tokyo-local-guide-2058394939228875949" target="_blank" rel="noopener">Get a custom itinerary — from $50 →</a>
 <a class="btn" style="border:1.5px solid var(--accent); color:var(--accent);" href="mailto:hkidachi@gmail.com?subject=Travel%20question%20%E2%80%94%20Hidden%20Tokyo%20Experiences">✉ Or just ask — it's free</a>
 </div>
-<p style="color:#6f675e; font-size:.82rem; margin-top:.9rem;">Itineraries ordered securely via Upwork · questions: use the email link above (replies within 24h)</p>
+<p style="color:#6a6153; font-size:.82rem; margin-top:.9rem;">Itineraries ordered securely via Upwork · questions: use the email link above (replies within 24h)</p>
 </div>
 </div>
 </section>
