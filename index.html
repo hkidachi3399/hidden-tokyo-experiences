@@ -302,6 +302,7 @@ pointer-events:none;
 .m-samurai { background-image:url('https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=80,width=1000,height=750,dpr=1/tour_img/f239fe8c0dc877302e0d4c7b72f24b511e9b50aca8d64fa5035454dbcd3ae69a.jpg'); }
 .m-kiyose { background-image:url('https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=80,width=1000,height=750,dpr=1/tour_img/efab0cc578b74c364ffa96e76fe20bca960e2833a775171a2313a9e90a8b8a89.jpg'); }
 .m-noodle { background-image:url('https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=80,width=1000,height=750,dpr=1/tour_img/fd402e39a9ea6b17bf87515ea77992389c3dd3f748203dfe1b499c71001c759e.jpg'); }
+.m-tamako { background-image:url('tamako-lake-real.jpg'); }
 /* unify photo tone across tour cards */
 .card-media { filter:saturate(1.04) contrast(1.02); }
 .card-media.m-manga { filter:brightness(1.1) saturate(1.1) contrast(1.03); }
@@ -704,6 +705,17 @@ animation:cueBounce 1.6s ease-in-out infinite; transition:opacity .4s;
 </div>
 </div>
 
+<div class="card" data-tour="tamako-cycling">
+<div class="card-media m-tamako" role="img" aria-label="Road bike on the lakeside promenade overlooking Lake Tama, west Tokyo"></div>
+<div class="card-body">
+<div class="coming-badge" style="color:var(--muted);">🚴 Coming soon</div>
+<h3>Tamako &amp; Sayama Lake Cycling Tour</h3>
+<p class="desc">A guided ride along the Lake Tama reservoir promenade with a stop at neighboring Lake Sayama. Currently in testing and not yet bookable — let us know you're interested and we'll reach out the moment dates open.</p>
+<div class="tour-tags"><span class="tag">Half-day</span><span class="tag">Cycling</span><span class="tag">Two lakes</span></div>
+<a class="ask-link" style="margin-top:.2rem;" href="#custom-request" data-tour="tamako-cycling">Interested? Let us know →</a>
+</div>
+</div>
+
 </div>
 <div class="grid-dots" id="tours-dots" aria-hidden="true"></div>
 </div>
@@ -737,6 +749,7 @@ animation:cueBounce 1.6s ease-in-out infinite; transition:opacity .4s;
 <option value="Hidden Shakujii Park Walk with Samurai Ruins &amp; Udon">Hidden Shakujii Park Walk with Samurai Ruins &amp; Udon</option>
 <option value="Kiyose Farm, Local Market &amp; Soba Lunch">Kiyose Farm, Local Market &amp; Soba Lunch</option>
 <option value="Noodle Factory Outlet Shopping &amp; Local Ramen Lunch">Noodle Factory Outlet Shopping &amp; Local Ramen Lunch</option>
+<option value="Tamako &amp; Sayama Lake Cycling Tour (coming soon)">Tamako &amp; Sayama Lake Cycling Tour (coming soon)</option>
 <option value="Not sure / something custom">Not sure / something custom</option>
 </select>
 </label>
@@ -1039,7 +1052,8 @@ zen:"Heirinji Temple Monks' Path & Forest Meditation Walk",
 manga:"Birthplace of Manga & Anime Guided Museum Walk",
 samurai:"Hidden Shakujii Park Walk with Samurai Ruins & Udon",
 kiyose:"Kiyose Farm, Local Market & Soba Lunch",
-noodle:"Noodle Factory Outlet Shopping & Local Ramen Lunch"
+noodle:"Noodle Factory Outlet Shopping & Local Ramen Lunch",
+"tamako-cycling":"Tamako & Sayama Lake Cycling Tour (coming soon)"
 };
 var select=document.getElementById('requestTourSelect');
 document.querySelectorAll('.ask-link[data-tour]').forEach(function(a){
