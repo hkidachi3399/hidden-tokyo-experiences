@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/faq.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/heirinji-zen-temple-tokyo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/shakujii-samurai-tokyo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/spa-japon-kurome-river-tokyo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/hanno-sake-forest-tokyo.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/totoro-forest-tokyo.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/</loc>
+<changefreq>weekly</changefreq>
+<priority>1.0</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/faq.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/</loc>
+<changefreq>weekly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/tokyo-october-travel-guide.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/kiyose-farm-tokyo.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/tokyo-september-travel-guide.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/tokyo-autumn-leaves-west-tokyo-guide.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/tokyo-late-summer-heat-relief.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/musashino-udon-tokyo.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/manga-anime-birthplace-tokyo.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/heirinji-zen-temple-tokyo.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/shakujii-samurai-tokyo.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/spa-japon-kurome-river-tokyo.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/hanno-sake-forest-tokyo.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
+</url>
+<url>
+<loc>https://hkidachi3399.github.io/hidden-tokyo-experiences/blog/totoro-forest-tokyo.html</loc>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
 </urlset>
