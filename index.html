@@ -65,6 +65,9 @@ a { color:var(--accent); }
 @media (prefers-reduced-motion: reduce) {
 .rv { opacity:1; transform:none; transition:none; }
 .hero-bg { animation:none !important; }
+.hero-in > * { animation:none !important; opacity:1 !important; transform:none !important; }
+.orn i { animation:none !important; }
+.featured-media::before { animation:none !important; }
 }
 
 /* ---------- Header ---------- */
@@ -92,6 +95,12 @@ transition:background .15s;
 .top-nav { display:flex; align-items:center; gap:1.1rem; }
 .top-nav > a:not(.top-cta) { color:var(--ink); text-decoration:none; font-weight:600; font-size:.9rem; }
 .top-nav > a:not(.top-cta):hover { color:var(--accent); }
+.top-nav > a:not(.top-cta):not(.ig-link) { position:relative; }
+.top-nav > a:not(.top-cta):not(.ig-link)::after {
+content:""; position:absolute; left:0; right:100%; bottom:-4px; height:2px;
+background:var(--accent); transition:right .3s cubic-bezier(.22,.61,.36,1);
+}
+.top-nav > a:not(.top-cta):not(.ig-link):hover::after { right:0; }
 .ig-link { display:inline-flex; align-items:center; justify-content:center; color:var(--ink); opacity:.75; transition:opacity .15s,transform .15s; }
 .ig-link:hover { opacity:1; transform:translateY(-1px); }
 .ig-link svg { width:19px; height:19px; display:block; }
@@ -157,10 +166,20 @@ radial-gradient(ellipse at 50% -30%, rgba(0,0,0,.35), transparent 60%);
 pointer-events:none;
 }
 .hero-in { position:relative; z-index:2; max-width:720px; margin:0 auto; }
+.hero-in > * { opacity:0; transform:translateY(16px); animation:heroReveal .85s cubic-bezier(.22,.61,.36,1) forwards; }
+.hero-in > *:nth-child(1) { animation-delay:.05s; }
+.hero-in > *:nth-child(2) { animation-delay:.16s; }
+.hero-in > *:nth-child(3) { animation-delay:.27s; }
+.hero-in > *:nth-child(4) { animation-delay:.38s; }
+.hero-in > *:nth-child(5) { animation-delay:.49s; }
+.hero-in > *:nth-child(6) { animation-delay:.6s; }
+.hero-in > *:nth-child(7) { animation-delay:.72s; }
+@keyframes heroReveal { to { opacity:1; transform:none; } }
 .orn { display:flex; align-items:center; justify-content:center; gap:.7rem; margin-bottom:1rem; }
 .orn::before, .orn::after { content:""; width:44px; height:1px; background:linear-gradient(90deg,transparent,#c9a659); }
 .orn::after { background:linear-gradient(90deg,#c9a659,transparent); }
-.orn i { width:7px; height:7px; background:#c9a659; transform:rotate(45deg); display:block; }
+.orn i { width:7px; height:7px; background:#c9a659; transform:rotate(45deg); display:block; animation:ornPulse 2.8s ease-in-out .9s infinite; }
+@keyframes ornPulse { 0%,100% { opacity:1; transform:rotate(45deg) scale(1); } 50% { opacity:.55; transform:rotate(45deg) scale(1.2); } }
 .hero .kicker {
 display:inline-block; font-size:.78rem; letter-spacing:.26em; text-transform:uppercase;
 color:#d8cfae; margin-bottom:1.2rem; font-weight:600;
@@ -184,10 +203,17 @@ padding:.88rem 1.7rem; border-radius:999px;
 transition:transform .2s cubic-bezier(.22,.61,.36,1), box-shadow .2s, background .2s;
 }
 .btn-primary {
+position:relative; overflow:hidden;
 background:linear-gradient(150deg,#d1523a 0%, #c23e27 55%, #a52e1a 100%);
 color:#fff;
 box-shadow:0 1px 2px rgba(140,40,20,.42), 0 8px 22px rgba(194,62,39,.4);
 }
+.btn-primary::before {
+content:""; position:absolute; inset:0; pointer-events:none;
+background:linear-gradient(115deg, transparent 42%, rgba(255,255,255,.4) 50%, transparent 58%);
+transform:translateX(-130%); transition:transform .65s ease;
+}
+.btn-primary:hover::before { transform:translateX(130%); }
 .btn-primary:hover { transform:translateY(-2px); box-shadow:0 2px 4px rgba(140,40,20,.42), 0 14px 30px rgba(194,62,39,.48); }
 .btn-ghost { border:1.5px solid rgba(255,255,255,.55); color:#fff; }
 .btn-ghost:hover { background:rgba(255,255,255,.14); transform:translateY(-2px); }
@@ -211,9 +237,17 @@ border:1px solid #f0e9dc; box-shadow:var(--shadow-lg);
 overflow:hidden; display:grid; grid-template-columns:1fr 1fr;
 }
 .featured-media {
-min-height:320px; position:relative;
-background:url('https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=80,width=1000,height=750,dpr=1/tour_img/c9c607761c67cbc914ece1dfea31f8eb104f871d9a2fd681a4e6857b9951f459.jpeg') center/cover no-repeat, #2e4a33;
+min-height:320px; position:relative; overflow:hidden;
+background:#2e4a33;
 }
+.featured-media::before {
+content:""; position:absolute; inset:-6%;
+background-image:var(--feat-bg, url('https://cdn.getyourguide.com/image/format=auto,fit=crop,gravity=auto,quality=80,width=1000,height=750,dpr=1/tour_img/c9c607761c67cbc914ece1dfea31f8eb104f871d9a2fd681a4e6857b9951f459.jpeg'));
+background-size:cover; background-position:var(--feat-pos, center); background-repeat:no-repeat;
+animation:featKenburns 24s ease-in-out infinite alternate;
+will-change:transform;
+}
+@keyframes featKenburns { from { transform:scale(1); } to { transform:scale(1.09); } }
 .featured-media::after {
 content:""; position:absolute; inset:0;
 background:linear-gradient(200deg, rgba(20,16,12,.18), transparent 45%);
@@ -914,7 +948,7 @@ var pick=feats[isoWeek(new Date())%feats.length];
 var elK=document.getElementById('featuredKicker'), elH=document.getElementById('featuredHeading'), elM=document.getElementById('featuredMedia'), elB=document.getElementById('featuredBadge'), elTags=document.getElementById('featuredTags'), elH3=document.getElementById('featuredH3'), elDesc=document.getElementById('featuredDesc'), elPrice=document.getElementById('featuredPriceRow'), elCta=document.getElementById('featuredCta'), elBlog=document.getElementById('featuredBlogLink'), elAsk=document.getElementById('featuredAskLink'), elHeroBg=document.getElementById('heroBg'), elHeroCta=document.getElementById('heroCta');
 if(elK) elK.textContent=pick.kicker;
 if(elH) elH.innerHTML=pick.heading;
-if(elM){ elM.style.backgroundImage=pick.media; elM.style.backgroundSize='cover'; elM.style.backgroundPosition=pick.pos; elM.setAttribute('aria-label',pick.alt); }
+if(elM){ elM.style.setProperty('--feat-bg', pick.media); elM.style.setProperty('--feat-pos', pick.pos); elM.setAttribute('aria-label',pick.alt); }
 if(elB) elB.textContent=pick.badge;
 if(elTags) elTags.innerHTML=pick.tags.map(function(t){return '<span class="tag">'+t+'</span>';}).join('');
 if(elH3) elH3.textContent=pick.h3;
