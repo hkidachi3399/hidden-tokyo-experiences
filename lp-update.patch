@@ -1,5 +1,5 @@
 diff --git a/index.html b/index.html
-index 7b7a670..52910b3 100644
+index 7b7a670..4efdc73 100644
 --- a/index.html
 +++ b/index.html
 @@ -329,6 +329,7 @@ background:linear-gradient(180deg, transparent 58%, rgba(20,16,12,.22));
@@ -10,6 +10,15 @@ index 7b7a670..52910b3 100644
  .m-totoro { background-image:url('totoro.jpg'); }
  .m-spa { background-image:url('spa.jpg'); }
  .m-zen { background-image:url('zen.jpg'); background-position:75% center; }
+@@ -612,7 +613,7 @@ animation:cueBounce 1.6s ease-in-out infinite; transition:opacity .4s;
+ </div>
+ 
+ <section class="stats" aria-label="Quick facts">
+-<div class="stat"><b data-count="8">0</b><span>Signature Tours</span></div>
++<div class="stat"><b data-count="9">0</b><span>Signature Tours</span></div>
+ <div class="stat"><b data-count="3">0</b><span>Guests Max</span></div>
+ <div class="stat"><b data-count="45" data-prefix="&lt; " data-suffix=" min">0</b><span>From Ikebukuro</span></div>
+ <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Local-Guided</span></div>
 @@ -649,12 +650,24 @@ animation:cueBounce 1.6s ease-in-out infinite; transition:opacity .4s;
  <div class="wrap">
  <div class="sec-head">
