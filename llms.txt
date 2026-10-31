@@ -7,7 +7,7 @@
 - Official site: https://hkidachi3399.github.io/hidden-tokyo-experiences/
 - What it is: Hidden Tokyo Experiences is a small-group walking tour company offering 11 English-guided tours in west Tokyo and neighboring Saitama, within about an hour of Ikebukuro. Max 3 or 4 guests per tour, depending on the tour.
 - Where: based in Kiyose, west Tokyo. Tours run in west Tokyo (Kiyose, Higashikurume, Shakujii, Toshima) and neighboring Saitama (Hanno, Tokorozawa).
-- Who runs it: Hide, a Tokyo-born local guide who works in international business on weekdays and guides visitors on weekends.
+- Who runs it: Hide, a Tokyo-born local guide who walks visitors through west Tokyo and neighboring Saitama.
 - Booking: GetYourGuide, Viator and Klook.
 
 ## Tours
@@ -45,7 +45,7 @@ Each page has a plain-language summary, key facts, an FAQ and a booking link:
 
 ## Key facts
 
-- Guide: Hide, a Tokyo local who also works full-time in international business and guides on weekends.
+- Guide: Hide, a Tokyo-born local guide.
 - Group size: maximum 3 or 4 guests per tour, depending on the tour (see the list below).
 - Language: all tours are guided in English.
 - Typical price: roughly ¥6,500 to ¥18,000 per person depending on the tour; current prices are on each GetYourGuide listing.
