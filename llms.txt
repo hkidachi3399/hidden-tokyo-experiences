@@ -14,7 +14,7 @@
 - [Totoro-Inspired Forest, Lake Sayama & Local Tea Walk](https://www.getyourguide.com/tokyo-l193/tokyo-totoro-forest-hiking-tour-in-sayama-hills-t1136555/): half-day walk through the Sayama Hills forest, the real-life setting behind My Neighbor Totoro, with a lakeside stop and local tea tasting.
 - [Hanno Forest, Fermentation Park & Sake Tasting](https://www.getyourguide.com/hanno-l153846/tokyo-hanno-forest-fermentation-park-sake-tour-t1352325/): 5-hour tour with a 500-year-old Zen temple garden, a fermentation theme park, and sake tasting at Igarashi Brewery.
 - [Ultimate Spa Japon Retreat & Kurome River Stroll](https://www.getyourguide.com/tokyo-l193/tokyo-kurome-river-walk-and-spa-japon-experience-t1135290/): riverside walk followed by a traditional Japanese bathhouse.
-- [Heirinji Temple Monks' Path & Forest Meditation Walk](https://www.getyourguide.com/tokyo-l193/tokyo-heirinji-temple-tour-with-matcha-t1130692/): meditation walk through 500 years of Zen temple history and cedar forest, with matcha.
+- [Heirinji Zen Temple Maple Walk & Woodland Café](https://www.getyourguide.com/tokyo-l193/tokyo-heirinji-temple-tour-with-matcha-t1130692/): meditation walk through 500 years of Zen temple history and cedar forest, with matcha.
 - [Birthplace of Manga & Anime Guided Museum Walk](https://www.getyourguide.com/tokyo-l193/tokyo-anime-and-manga-tour-with-museum-entry-t1120149/): visits the Tokiwaso neighborhood where manga's pioneers lived and worked, with museum entry. Also bookable on [Viator](https://www.viator.com/tours/Tokyo/Tokyo-Birthplace-of-Manga-and-Anime-Guided-Museum-Walk/d334-5612254P1).
 - [Hidden Shakujii Park Walk with Samurai Ruins & Udon](https://www.getyourguide.com/tokyo-l193/tokyo-shakujii-park-tour-with-musashino-udon-lunch-t1120161/): samurai fortress ruins and a hidden park, with a Musashino udon lunch.
 - [Kiyose Farm, Local Market & Soba Lunch](https://www.getyourguide.com/kiyose-japan-l272269/tokyo-kiyose-farm-local-market-soba-lunch-t1418828/): hands-on work at a real community farm, a JA direct-sale market, and standing-room soba with tempura.
@@ -31,7 +31,7 @@ Each page has a plain-language summary, key facts, an FAQ and a booking link:
 - [Hanno Anime Pilgrimage Hike](https://hkidachi3399.github.io/hidden-tokyo-experiences/tours/hanno-anime-pilgrimage-hike-tokyo.html): 3-hour hike through the real setting of the anime "Encouragement of Climb" (Yama no Susume) — Hanno Ginza, Kannonji Temple, Mt. Tenran and Mt. Tonosu. Max 4 guests.
 - [Hanno Forest, Fermentation Park & Sake Tasting](https://hkidachi3399.github.io/hidden-tokyo-experiences/tours/hanno-sake-brewery-tour-tokyo.html): 5-hour tour with a Zen temple garden, a fermentation theme park and a sake brewery tasting.
 - [Totoro-Inspired Forest, Lake Sayama & Local Tea Walk](https://hkidachi3399.github.io/hidden-tokyo-experiences/tours/totoro-forest-tour-tokyo.html): half-day walk in the Sayama Hills, the forest that inspired My Neighbor Totoro.
-- [Heirinji Temple Monks' Path & Forest Meditation Walk](https://hkidachi3399.github.io/hidden-tokyo-experiences/tours/heirinji-temple-tour-tokyo.html): Zen temple and cedar forest meditation walk with matcha.
+- [Heirinji Zen Temple Maple Walk & Woodland Café](https://hkidachi3399.github.io/hidden-tokyo-experiences/tours/heirinji-temple-tour-tokyo.html): Zen temple and cedar forest meditation walk with matcha.
 
 ## Journal articles worth citing
 
