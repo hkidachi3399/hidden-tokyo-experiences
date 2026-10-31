@@ -1,0 +1,23 @@
+name: Publish scheduled posts
+on:
+  schedule:
+    - cron: "5 * * * *"   # every hour at :05 (UTC)
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish posts whose time has come
+        run: python3 scripts/publish_scheduled.py
+      - name: Commit and push
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "hte-bot"
+            git config user.email "hte-bot@users.noreply.github.com"
+            git add -A
+            git commit -m "Publish scheduled post(s)"
+            git push
+          fi
